@@ -1,0 +1,373 @@
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.ex {
+  width: 90%;
+  max-width: 100%;
+  height: 600px;
+  padding: 50px;
+  margin: 50px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow: auto;
+  border: 2px solid #D47E37;
+  text-align: center;
+}
+
+.name {
+  font-size: 30px;
+}
+
+.ex::-webkit-scrollbar {
+  width: 12px;
+}
+
+.ex::-webkit-scrollbar-thumb {
+  border-radius: 24px;
+  background-color: #a56e40;
+}
+
+.ex::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+.header {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  z-index: 100;
+  padding: 0 20px;
+  margin: -7px -28px;
+  justify-content: flex-start;
+}
+
+.nav {
+  padding: 0 120px;
+  z-index: 999;
+  width: 105%;
+
+}
+
+.nav,
+.nav_item {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_logo,
+.nav_link,
+.button {
+  color: #fff;
+}
+
+.nav_logo {
+  font-size: 25px;
+}
+
+.nav_item {
+  column-gap: 25px;
+}
+
+.nav_link:hover {
+  color: #d9d9d9;
+}
+
+.button {
+  padding: 6px 24px;
+  border: 2px solid #fff;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+/* Add a media query for screens with a max-width of 600px */
+@media (max-width: 600px) {
+  #nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+}
+
+/* Other styles remain unchanged */
+
+#welcome-text {
+  text-align: center;
+  position: relative;
+  height: 40vh;
+  margin-bottom: 2px;
+  font-size: 55px;
+}
+
+#welcome-text1 {
+  text-align: center;
+  position: relative;
+  height: 20vh;
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+
+#countdown,
+#todays-topic {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+#video {
+  text-align: center;
+  font-size: 24px;
+  max-width: 120%;
+
+}
+
+hr {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #f2f2f2;
+}
+
+/* 
+#exbt {
+  width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 24px;
+} */
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  #welcome-text {
+    font-size: 30px;
+  }
+
+  #countdown,
+  #todays-topic {
+    font-size: 16px;
+    /* Adjusted font size for smaller screens */
+  }
+}
+
+form {
+  margin: 20px;
+}
+
+label {
+  font-size: 26px;
+  margin-right: 10px;
+}
+
+/* select {
+  padding: 8px;
+  font-size: 14px;
+} */
+
+#google_translate_element {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+table {
+  border-radius: 20px;
+  width: 80%;
+  margin: 20px auto;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  /* Center the text in table cells */
+}
+
+th {
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#open {
+  display: inline-block;
+  text-align: center;
+  padding: 8px 28px;
+  margin: 5px;
+  width: 60%;
+  border: 2px solid #E6A568;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #E6A568;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#open:hover {
+  display: inline-block;
+  padding: 8px 28px;
+  margin: 5px; width: 65%;
+  border: 2px solid #030303;
+  border-radius: 10px;
+  background-color: #c07f41;
+  color: #030303;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* 
+.c {
+  border: 2px solid black;
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+} */
+
+#pdfViewer {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+#bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 00;
+  filter: blur(3px);
+}
+
+#main1 {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.resource-button {
+  display: inline-block;
+  padding: 8px 28px;
+  color: #E6A568;
+  margin: 5px;
+  border: 2px solid #E6A568;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.resource-button:hover {
+  display: inline-block;
+  padding: 8px 30px;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: #D47E37;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#exbt {
+  display: inline-block;
+  font-size: 20px;
+  width: 80%;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, width 0.3s ease;
+  /* Added width transition */
+  background-color: transparent;
+  border: 3px solid #A56E40;
+}
+
+/* Hover Effect */
+#exbt:hover {
+  border: 3px solid #d29767;
+  width: 85%;
+  color: #d29767;
+}
+
+#contentDropdown {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  text-decoration: double;
+  text-align: center;
+  background-color: transparent;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid #d29767;
+  color: #d29767;
+}
+
+#v {
+  color: #fff;
+  background-color: black;
+}
+
+.v::-webkit-scrollbar {
+  width: 12px;
+}
+
+.v::-webkit-scrollbar-thumb {
+  border-radius: 24px;
+  background-color: #a56e40;
+}
+
+.v::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#b {
+  display: inline-block;
+  font-size: 20px;
+  width: 20%;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, width 0.3s ease;
+  /* Added width transition */
+  background-color: transparent;
+  border: 3px solid #A56E40;
+}
+
+#b:hover {
+  border: 3px solid #d29767;
+  width: 25%;
+  color: #d29767;
+}
