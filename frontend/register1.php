@@ -5,7 +5,7 @@ if ($f == "first") {
 
   $uname = $_POST['username'];
   $name = $_POST['name'];
-  $age = $_POST['age'];
+  // $age = $_POST['age'];
   $email = $_POST['email'];
   $phone = $_POST['phone'];
   $password = $_POST['password'];
@@ -13,7 +13,7 @@ if ($f == "first") {
 
   $_SESSION['uname'] = $uname;
   $_SESSION['name'] = $name;
-  $_SESSION['age'] = $age;
+  // $_SESSION['age'] = $age;
   $_SESSION['email'] = $email;
   $_SESSION['phone'] = $phone;
   $_SESSION['password'] = $password;
@@ -55,7 +55,7 @@ if ($f == "first") {
 
   $name = $_SESSION['name'];
   $uname = $_SESSION['uname'];
-  $age = $_SESSION['age'];
+  // $age = $_SESSION['age'];
   $email = $_SESSION['email'];
   $phone = $_SESSION['phone'];
   $password = $_SESSION['password'];
@@ -71,7 +71,7 @@ if ($f == "first") {
     'Name' => $name,
     'Username' => $uname,
     'Email' => $email,
-    'Age' => $age,
+    // 'Age' => $age,
     'Password' => $passhash,
     'Phone_Number' => $phone,
     'Board' => $board,

@@ -196,9 +196,10 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
             </ul>
 
             <a href="logout.php"> <button class="button" id="form-open">SignOut</button></a>
-        </nav>   
-    </header>    <div id="main1"> <img id="bg" src="\images\notes.png" />
-    <br><br> <br><br> <br><br>
+        </nav>
+    </header>
+    <div id="main1"> <img id="bg" src="\images\notes.png" />
+        <br><br> <br><br> <br><br>
 
         <h1>PCM Books</h1>
 
@@ -382,9 +383,9 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
                 <tr>
                     <td>Algebra by Dr. S K Goyal</td>
                     <td><a href="https://drive.google.com/file/d/1OpGbCZjM9tx2Xp_r7XcTeRHYlCTxNOBr/view?usp=sharing" target="_blank" Open>
-                            <div id="open">
-                                <div id="open">Open</div>
-                            </div>
+
+                            <div id="open">Open</div>
+
                         </a></td>
                 </tr>
             </tbody>

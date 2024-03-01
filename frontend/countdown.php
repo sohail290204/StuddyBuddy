@@ -158,7 +158,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 
 
       // $sc = $daysRemaining;
-      $sc =29;
+      $sc =50;
 
       $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
       $database = $client->selectDatabase('Syllabus');

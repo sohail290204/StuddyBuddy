@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <?php session_start(); ?>
 
@@ -286,5 +286,167 @@
         }
     });
 </script>
+
+</html> -->
+<?php
+$_SESSION['first'] = "sixth";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<meta name="google-signin-client_id" content="793066271845-lrbrmbuksp85427pojtpmqo56ogtjjre.apps.googleusercontent.com">
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="/frontend/register.css">
+<title>Registration Form</title>
+</head>
+
+<body>
+    <div class="containerr">
+        <div class="form-container">
+            <div class="login-content">
+                <form action="reg.php" method="post">
+
+                    <div class="form-group">
+                        <h2 class="title">Teacher Registration Form</h2>
+                        <div class="first">
+                            <br>
+                            <div class="input-div one">
+                                <div class="div">
+                                    <h5>Username</h5>
+                                    <input type="text" id="username" class="input" name="username" required><br><br><br><br><br><br>
+                                    <span id="usernameError"> </span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="input-div one">
+                                <div class="div">
+                                    <h5>Subject</h5>
+                                    <input type="text" id="subject" class="input" name="subject" required>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="input-div one">
+                                <div class="div">
+                                    <h5>Phone Number</h5>
+                                    <input type="tel" id="phone" class="input" name="phone" required>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="input-div one">
+                                <div class="div">
+                                    <h5>Password</h5>
+                                    <input type="password" id="password" class="input" name="password" required>
+                                    <!-- <i class="fas fa-eye" id="togglePassword"></i> -->
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="secondd">
+                            <div class="input-div one">
+                                <div class="div">
+                                    <h5>Name</h5>
+                                    <input type="text" id="name" class="input" name="name" required>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="input-div one">
+                                <div class="div">
+                                    <h5>Years of Experience</h5>
+                                    <input type="text" id="exp" class="input" name="exp" required>
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="input-div one">
+                                <div class="div">
+                                    <h5>Email</h5>
+                                    <input type="text" id="email" class="input" name="email" required>
+                                </div>
+                            </div> <br>
+                            <div class="input-div one">
+                                <div class="div">
+                                    <h5>Re-Enter Password</h5>
+                                    <input type="password" id="reenterpassword" class="input" name="reenterpassword" required><br><br><br><br><br><br>
+                                    <span id="passwordError" class="passwordError"></span>
+                                    <!-- <i class="fas fa-eye" id="toggleReenterPassword"></i> -->
+                                </div>
+                            </div>
+                        </div>
+                       <!-- <span id="usernameError"> </span> --><br><br><br>
+                    </div>
+                    <input type="submit" id="submitBtn" class="btnn" value="Register">
+                    <div class="aa">Already have an account? <br><a href="adminlogin.php"> Click Here!!</a></div>
+                    <br>
+                </form>
+            </div>
+        </div>
+        <div class="image-container"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            <?php $_SESSION['f'] = 'f' ?>
+
+            function checkUsernameAvailability() {
+                let username = $("#username").val();
+                $.post("usernamecheck1.php", {
+                    username: username
+                }, function(data) {
+                    $("#usernameError").html(data);
+
+                    updateSubmitButtonState();
+                });
+            }
+
+            function checkPasswordMatch() {
+                let password = $("#password").val();
+                let confirmPassword = $("#reenterpassword").val();
+                if (password !== confirmPassword) {
+                    $("#passwordError").html("Passwords do not match");
+                } else {
+                    $("#passwordError").html("");
+                }
+                updateSubmitButtonState();
+            }
+
+            function updateSubmitButtonState() {
+                let passwordMatch = $("#passwordError").text().trim() === "";
+                let usernameExists = $("#usernameError").text().includes("exists");
+                let disableButton = usernameExists || !passwordMatch;
+                $("#submitBtn").prop("disabled", disableButton);
+            }
+            $("#username").on("input", checkUsernameAvailability);
+            $("#reenterpassword, #password").on("input", checkPasswordMatch);
+            updateSubmitButtonState();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#togglePassword").click(function() {
+                togglePasswordVisibility("password");
+            });
+
+            $("#toggleReenterPassword").click(function() {
+                togglePasswordVisibility("reenterpassword");
+            });
+
+            function togglePasswordVisibility(inputId) {
+                var inputType = $("#" + inputId).attr("type");
+                if (inputType === "password") {
+                    $("#" + inputId).attr("type", "text");
+                } else {
+                    $("#" + inputId).attr("type", "password");
+                }
+            }
+        });
+    </script>
+    <script type="text/javascript" src="\frontend\main.js"></script>
+
+</body>
 
 </html>

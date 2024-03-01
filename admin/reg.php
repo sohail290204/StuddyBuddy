@@ -6,14 +6,17 @@ if ($f == "sixth") {
     $uname = $_POST['username'];
     $name = $_POST['name'];
     $subject = $_POST['subject'];
+    $experience = $_POST['exp'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $password = $_POST['password'];
     $repassword = $_POST['reenterpassword'];
 
+    $experience = $experience . 'yrs';
 
     $_SESSION['adminuname'] = $uname;
     $_SESSION['adminname'] = $name;
+    $_SESSION['experience'] = $experience;
     $_SESSION['adminsubject'] = $subject;
     $_SESSION['adminemail'] = $email;
     $_SESSION['adminphone'] = $phone;
@@ -50,7 +53,8 @@ if ($f == "sixth") {
                 'Email' => $email,
                 'Password' => $passhash,
                 'Phone_Number' => $phone,
-                'Subject' => $subject
+                'Subject' => $subject,
+                'Experience'=>$experience
             ];
 
             // Insert the document into the collection
@@ -92,14 +96,6 @@ if ($f == "sixth") {
 
     if ($document) {
         $storedPassword = $document['Password'];
-
-        // if ($password == $storedPassword) {
-        //     $_SESSION['login'] = true;
-        //     header("Location: adminhome.php");
-        // } else {
-        //     $_SESSION['login_error'] = "Invalid Username or Password";
-        //     header("Location: adminlogin.php");
-        // }
         if (sha1($password) === $storedPassword) {
             $_SESSION['login'] = true;
             header("Location: adminhome.php");
