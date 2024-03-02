@@ -7,7 +7,7 @@ session_destroy();
 if (isset($_SESSION["uname"])) {
     echo "hello";
 }
-header("Location:firstpage.php");
+header("Location:/admin/firstpage.php");
 ?>
 
 </HTML>

@@ -48,7 +48,8 @@ a {
 
 .nav_logo,
 .nav_link,
-.button {
+.button,
+.button1 {
     color: #fff;
 }
 
@@ -72,7 +73,21 @@ a {
     cursor: pointer;
 }
 
+.button1 {
+    padding: 6px 24px;
+    margin-right: -300px;
+    margin-left: 80px;
+    border: 2px solid #fff;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 .button:active {
+    transform: scale(0.98);
+}
+
+.button1:active {
     transform: scale(0.98);
 }
 
@@ -250,27 +265,38 @@ h2 {
     transition: .5s;
 }
 
-.btnn:hover { width: 40%;
+.btnn:hover {
+    width: 40%;
     background-position: right;
 }
-.aa{
+
+.aa {
     display: block;
-    width: 200px;
-    height: 30px;
+    width: 300px;
+    height: 32px;
     border-radius: 25px;
     outline: none;
     border: none;
     position: relative;
     top: -0px;
-    left: 200px;
+    left: 150px;
     background-color: transparent;
     background-size: 200%;
     font-size: 1.2rem;
     color: #fff;
     font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    padding: 5px;
     text-transform: uppercase;
     margin: 1rem 0;
     cursor: pointer;
     border: 2px solid black;
     transition: .5s;
+}
+
+.aa:hover {
+    height: 35px;
+    width: 330px;
+    left: 135px;
+    background-position: right;
 }

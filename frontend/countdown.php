@@ -2,7 +2,7 @@
 session_set_cookie_params(0);
 session_start();
 if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
-  header('Location: firstpage.php');
+  header('Location: /admin/firstpage.php');
 }
 ?>
 
