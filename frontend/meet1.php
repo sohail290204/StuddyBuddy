@@ -42,7 +42,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
         foreach ($documents as $document) {
             $res .= '<div class="container">';
             $res .= '<b>' . $document['Sender'] . ' to ' . $document['Recever'] . '</b>'; // Assuming 'Student' is the field you want to display
-            $res .= '<p>' . $document['Message'];
+            $res .= '<p>' . $document['Message'].'</p>' ;
             $res .= '<span class="time-right">' . $document['Time'] . '</span></div>';
         }
 

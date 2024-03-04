@@ -2,20 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "montserrat";
+    font-family: Arial, sans-serif;
 }
 
 
 
 body {
-    height: auto;
+    /* height: auto; */
     margin: 0;
 
     padding: 1px;
     /* background-image: url('/images/pro.png');
     background-size: cover;
     background-position: center; */
-    font-family: "montserrat";
+    font-family: Arial, sans-serif;
     background-color: rgba(0, 0, 0, 0.8);
 
 }
@@ -80,17 +80,105 @@ a {
     transform: scale(0.98);
 }
 
+/* #icon {
+    position: relative;
+    background-image: url('/images/men.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    display: flex;
+    justify-content: flex-end;
+
+} */
+h1 {
+    position: relative;
+    top: -25px;
+    left: -150px;
+    font-size: 65px;
+}
+
+.uname {
+    position: relative;
+    top: -25px;
+    left: -150px;
+    font-size: 20px;
+}
+
+p {
+    /* position: relative;
+    top: 110px;
+    left: -320px; */
+    font-size: 20px;
+}
+
+.chatForm {
+    text-align: center;
+    position: relative;
+    top: 300PX;
+    left: -420px;
+    font-size: 20px;
+}
+
 #profile-container {
-    max-width: 600px;
+    background-image: url('/images/men.png');
+    background-position: 850px -10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: flex-end;
     color: #f1f1f1;
     margin: 120px auto;
+    max-width: 1150px;
+    height: auto;
     background-color: transparent;
-    border: 2px solid #DB8148;
-    background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    /* Border-radius for the entire container */
+    position: relative;
+    top: 5px;
+    left: -100px;
 }
+
+#profile-container1 {
+    background-image: url('/images/men.png');
+    background-position: 850px -10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: flex-end;
+    color: #f1f1f1;
+    margin: 120px auto;
+    max-width: 1150px;
+    height: auto;
+    background-color: transparent;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* Border-radius for the entire container */
+    position: relative;
+    /* border: 2px solid wheat; */
+    top: 50px;
+    left: -300px;
+}
+
+#profile-container1 {
+    height: 300px;
+    /* border: 2px solid wheat; */
+    border-radius: 30px;
+    /* Adjust the border-radius */
+}
+
+
+/* You can adjust the height and border-radius directly on the #profile-container */
+#profile-container {
+    height: 300px;
+    /* border: 2px solid wheat; */
+    border-radius: 30px;
+    /* Adjust the border-radius */
+}
+
 
 #chat-box textarea {
     width: 100%;
@@ -101,7 +189,7 @@ a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
     box-sizing: border-box;
-    border: 2px solid #DB8148;
+    border: 2px solid rgb(213, 177, 155);
     border-radius: 8px;
 }
 
@@ -113,42 +201,78 @@ a {
     margin-bottom: 20px;
 }
 
-#user-details {
-    text-align: center;
+
+
+#user-details { 
+     /* border: 2px solid wheat; */
+    position: relative;
+    left: 150px;
+    width: 500px;
     margin-bottom: 20px;
 }
 
+#user-detail {
+
+
+    margin-bottom: 20px;
+}
+
+#user-detail h1 {
+    margin: 0;
+}
+
 #user-details h1 {
+
     margin: 0;
 }
 
 #contact-details {
     margin-bottom: 20px;
+    position: relative;
+    top: 180px;
+    left: -385px;
 }
 
 #contact-details p {
     margin: 5px 0;
+}
+#contact-detail p {
+    margin: 5px 0;
+}
+
+.contact-detail {
+    position: relative;
+    top: 120px;
+    left: -575px;
+}
+
+.contact-details {
+    position: relative;
+    top: 110px;
+    left: -320px;
+}
+
+h2 {
+  
+    position: relative;
+    color: #d9d9d9;
+    left: 300px;
+    top: -5px;
 }
 
 #chat-box {
     background-color: transparent;
     padding: 10px;
     border-radius: 8px;
+    left: -10px;
+    position: relative;
+    top: 130px;
+    width: 80%;
 }
 
 
 
-/* #chat-box button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-} */
-
 .container {
-
     margin: 20px auto;
     max-width: 600px;
     color: #f1f1f1;
@@ -157,9 +281,9 @@ a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 15px;
     box-sizing: border-box;
-    border: 2px solid #DB8148;
+    border: 2px solid rgb(213, 177, 155);
     border-radius: 8px;
-
+    /* width:80%; */
     /* Center-align the content */
 }
 
@@ -169,6 +293,8 @@ a {
 
 .time-right {
     float: right;
+    position: relative;
+    top: -5px;
     color: #aaa;
 }
 
@@ -185,18 +311,26 @@ a {
 .con {
     height: 300px;
     overflow: scroll;
+    /* width: 1050px; */
     padding-right: 10px;
-
     padding-left: 10px;
+    /* left: -400px; */
 }
 
 .con::-webkit-scrollbar {
     width: 12px;
 }
 
+#google_translate_element {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
 .con::-webkit-scrollbar-thumb {
     border-radius: 24px;
-    background-color: #616062;
+    background-color: rgb(0, 167, 115);
 }
 
 .con::-webkit-scrollbar-track {
@@ -207,9 +341,9 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: fixed;
+    position:fixed;
     z-index: -2;
-    filter: blur(3px);
+    /* filter: blur(3px); */
 }
 
 /* 
@@ -218,41 +352,57 @@ a {
     background-color: rgba(0, 0, 0, 0.6);
 } */
 
-#username{
+#username {
     padding: 6px;
-    border: 2px solid #575557;
-    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid rgb(213, 177, 155);
+    outline: none;
     font-size: 15px;
     width: 70%;
     text-align: center;
     background-color: transparent;
     color: #E6A568;
     margin-bottom: 10px;
+    transition: border-bottom-color 0.3s, width 0.3s;
+    /* Add smooth transition effect for both properties */
 }
 
-#submitBtn{
+#username:hover {
+    border-bottom-color: #E6A568;
+    width: 80%;
+    /* Change the width on hover */
+    border-bottom-width: 3.5px;
+}
+
+
+#submitBtn {
     display: inline-block;
     padding: 8px 28px;
     margin: 5px;
+    cursor: pointer;
     border: 2px solid #030303;
     border-radius: 10px;
-    background-color: #E6A568;
-    color: #030303;
+    background-color: rgb(0, 167, 115);
+    color: #f0f0f0;
     text-decoration: none;
     font-size: 16px;
-}
-#submitBtn:hover {
-    display: inline-block;
-    padding: 8px 30px;
-    margin: 5px;
-    border: 2px solid #030303;
-    border-radius: 10px;
-    background-color: rgb(216, 127, 56);
-    color: #030303;
-    text-decoration: none;
-    font-size: 16px;
+    transition: background 0.3s ease, padding 0.3s ease, border 0.3s ease;
 }
 
+#submitBtn:hover {
+    padding: 8px 30px;
+    border: 2px solid rgb(213, 177, 155);
+    background-color: rgb(7, 134, 94);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+#submitBtn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
 #sub {
     font-size: 17px;
@@ -260,17 +410,18 @@ a {
     width: 100%;
     border-radius: 20px;
     background: transparent;
-    background-color: #b48558;
-    color: antiquewhite;
-    border: 2px solid #75583e;
+    background-color: rgb(213, 177, 155);
+    color: rgb(0, 0, 0);
+    border: 2px solid #000000;
     cursor: pointer;
-    transition: background 0.3s ease, padding 0.3s ease, border 0.3s ease;   
+    transition: background 0.3s ease, padding 0.3s ease, border 0.3s ease;
     padding: 10px;
 
 }
 
 #sub:hover {
-    background: black;  
+    color: rgb(255, 255, 255);
+    background: black;
     padding: 10px 30px;
     border: 2px solid #c59479;
 }

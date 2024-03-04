@@ -6,8 +6,32 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 }
 
 ?>
+<!-- <script>
+    var myVariable = sessionStorage.getItem('h');
+    // var myVariable = "Hello from JavaScript!";
+
+    $.ajax({
+        type: "POST",
+        url: "your_php_script.php",
+        data: {
+            jsVariable: myVariable
+        },
+        success: function(response) {
+            console.log(response); // Handle the response from the PHP script
+        }
+    });
+</script> -->
 
 <?php
+// // Your PHP code here (assuming it's in the same file)
+// if (isset($_POST['jsVariable'])) {
+//     $s = $_POST['jsVariable'];
+// //     // echo "Received value in PHP: " . $phpVariable;
+// // } else {
+// //     // echo "No value received from JavaScript.";
+// }
+
+
 
 session_start();
 $uname = $_SESSION['adminuname'];
@@ -36,7 +60,7 @@ if ($s == 'h') {
         'Message' => $msg,
         'Time' => $t,
     ];
-} else {
+} elseif ($s == 'f') {
     $collection = $database->selectCollection('Chat');
     date_default_timezone_set("Asia/Kolkata");
     $t = date("m/d/Y h:i:s a", time());
@@ -58,9 +82,10 @@ $result = $collection->insertOne($document);
 if ($result->getInsertedCount() > 0) {
     // echo "Document inserted successfully!";
     if ($s == 'h') {
-       $_SESSION['check']="";
+        $_SESSION['check'] = "";
         header("Location:request.php");
-    } else {
+    } elseif ($s == 'f') {
+        $_SESSION['check'] = "";
         header("Location:chat.php");
     }
 } else {

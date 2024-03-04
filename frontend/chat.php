@@ -12,7 +12,35 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="chatdesign.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 </head>
+<script>
+  // Smooth scroll animation using GSAP
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // GSAP ScrollTrigger for the animation
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#todays-topic", {
+      opacity: 100, // Initial opacity
+      scrollTrigger: {
+        trigger: "#todays-topic",
+        start: "top bottom", // Trigger animation when the top of the element reaches the bottom of the viewport
+        end: "center center", // End the animation when the center of the element reaches the center of the viewport
+        scrub: true, // Smooth scrubbing effect
+      },
+    });
+  });
+</script>
 
 <body>
   <header class="header" class="mainMenu">
@@ -26,6 +54,9 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
           <a href="Schedule.php" class="nav_link">Schedule</a>
           <a href="notes.php" class="nav_link">Notes</a>
           <a href="profile.php" class="nav_link">Profile</a>
+          <a href="#msg" class="nav_link">ChatBox</a>
+          <a href="#c" class="nav_link">Group Study</a>
+          <a href="#list" class="nav_link">Teachers List</a>
         </li>
       </ul>
 
@@ -33,46 +64,63 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     </nav>
   </header>
 
-  <img id="bg" src="\images\chatroom.png">
-  <h2>Chat Messages</h2>
-
-  <div class="container">
-    <div class="con" id="con"></div>
-    <div id="tetx">
-      <input id="msg" class="msg" name="msg" required>
-      <!-- <input class="open" type="submit" name="sub" id="sub" > -->
-      <button class="open" name="sub" id="sub">submit</button>
+  <!-- <img id="bg" src="\images\chatroom.png"> -->
+  <!-- <h2>Chat Messages</h2> -->
+  <!-- <br><br> -->
+  <div id="msg">
+    <div class="containerr">
+      <div class="con" id="con"></div>
+      <div id="tetx">
+        <input id="msg" class="msg" name="msg" required>
+        <!-- <input class="open" type="submit" name="sub" id="sub" > -->
+        <button class="open" name="sub" id="sub"><i class="fas fa-paper-plane"></i></button>
+      </div>
     </div>
-
   </div>
-  <br><br>
-  <div class="container" id="c">
-    <h4>Join the video room</h4>
-    <a href="https://meet.google.com/wvc-gobm-aen" target="_blank" Open>
-      <div class="open">Open</div>
-    </a>
+  <div id="c">
+    <br><br> <br><br>
+    <div class="c">
+      <h4>Join the video room</h4>
+      <a href="https://meet.google.com/wvc-gobm-aen" target="_blank" Open>
+        <div class="o">Open</div>
+      </a>
+    </div>
   </div> <br>
+
+  <!-- <div class="container" id="c">
+    <h4>List of student on our platform</h4>
+    <?php
+    require 'vendor/autoload.php';
+    $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
+    $database = $client->selectDatabase('Syllabus');
+    $collection = $database->selectCollection('UserDetails');
+
+    ?>
+  </div><br> -->
   <?php
   $_SESSION["first"] = "eight";
   echo "<form action='register1.php' method='post'>";
 
-  echo '<div class="container" id="t">';
+  echo '<div class="container1" id="t">';
   echo "<br>";
+
   echo "<label>Search for the username of the teacher you want</label><br><br>";
-  echo '<input type="text" class="msg" id="username" name="username" required><br>';
+  echo '<input type="text" class="msg1" id="username" name="username" required><br>';
   echo " <span id='usernameError'></span><br>";
   echo "<br>";
   echo "<label>Enter your Doubt</label><br><br>";
-  echo '<input type="text" class="msg" id="topic" name="topic" required><br><br>';
+  echo '<input type="text" class="msg1" id="topic" name="topic" required><br><br>';
   // echo '  <input type="submit"  id="submitBtn" class="open" disabled>';
-  echo '<button id="submitBtn" class="open" disabled>Submit </button>';
+  echo '<button id="submitBtn"  disabled>Submit </button>';
   echo " </form>";
-  echo " <br><br>";
+  echo "<br><br> <br><br>";
+  echo "</div>";
+  echo "<div id='list'> <br> <br> <br>"; echo "</div>";
+  echo '<div  class="container2"';
 
-
-  echo "<label>";
-  echo " List of teachers available with us";
-  echo "</label>";
+  echo "";
+  echo "<label class='label'> List of teachers available with us</label>";
+  echo "";
 
   require 'vendor/autoload.php';
   $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
@@ -98,9 +146,10 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
   }
 
   echo "</table>";
+  echo "<br>";
+  echo "</div>";
+  ?>
 
-  echo "</div>" ?>
-  <br> <br><br>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -114,7 +163,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     $(document).ready(function() {
       // Function to check if username is available
       function checkUsernameAvailability() {
-        <?php   $_SESSION['f']='hello'; ?>
+        <?php $_SESSION['f'] = 'hello'; ?>
         let username = $("#username").val();
         $.post("usernamecheck1.php", {
           username: username

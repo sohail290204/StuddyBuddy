@@ -25,7 +25,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 </head>
 
 <body>
-<img id="bg" src="\images\request.png">
+    <!-- <img id="bg" src="\images\request.png"> -->
     <header class="header" class="mainMenu">
 
         <nav class="nav">
@@ -34,8 +34,9 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
             <ul class="nav_items">
                 <li class="nav_item">
                     <a href="adminhome.php" class="nav_link">Home</a>
-                    <a href="chat.php" class="nav_link">Chat Room</a>
-                    <a href="Schedule.php" class="nav_link">Your_Schedule</a>
+                    <a href="#main-container" class="nav_link">Request</a>
+                    <a href="#container1" class="nav_link">Search Students</a>
+                    <a href="Schedule.php" class="nav_link">Schedule</a>
                     <a href="setting.php" class="nav_link">Profile</a>
                 </li>
             </ul>
@@ -43,26 +44,32 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
             <a href="logout.php"> <button class="button" id="form-open">SignOut</button></a>
         </nav>
     </header>
-    <br> <br> <br> <br>
-    <div style="text-align: center;">
-        <div class="container">
-            <label><b>Request Notifications</b></label>
-            <div class="con"></div>
+    <div id="main-container" class="main-container">
+        <br> <br> <br> <br>
+        <div style="text-align: center;">
+            <div id="containerr" class="containerr">
+                <label><b>Request Notifications</b></label>
+                <div class="con"></div>
+            </div>
         </div>
-    </div>
-    <div style="text-align: center;">
-        <div class="container">
-            <form action='meet.php' method='post'>
+        <div style="text-align: center;">
+            <div id="container1" class="container1">
+                <div class="login-content">
+                    <form action='meet.php' class="login-form" method='post'>
+                        <div class="input-div one">
+                            <div class="div">
+                                <h5>Kindly choose the username of the student whose doubt you wish to answer</h5>
+                                <input type="text" id="username" class="input" name="username" required><br>
+                            </div>
+                        </div>
+                        <span id='usernameError'></span><br><br>
+                        <input type="submit" id="submitBtn" disabled>
+                    </form>
 
-                <label>Kindly choose the username of the student whose doubt you wish to answer</label><br><br>
-                <input type="text" id="username" name="username" required><br>
-                <span id='usernameError'></span><br>
-                <input type="submit" id="submitBtn" disabled>
-            </form>
-
+                </div>
+            </div>
         </div>
-    </div>
-
+    </div> <br> <br>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -76,6 +83,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
             let username = $("#username").val();
             <?php $_SESSION['f'] = 'h' ?>
             $.post("usernamecheck1.php", {
+
                 username: username
             }, function(data) {
                 $("#usernameError").html(data);
@@ -113,9 +121,37 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
             });
     }
 </script>
+<script>
+    // Smooth scroll animation using GSAP
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // GSAP ScrollTrigger for the animation
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to("#todays-topic", {
+            opacity: 100, // Initial opacity
+            scrollTrigger: {
+                trigger: "#todays-topic",
+                start: "top bottom", // Trigger animation when the top of the element reaches the bottom of the viewport
+                end: "center center", // End the animation when the center of the element reaches the center of the viewport
+                scrub: true, // Smooth scrubbing effect
+            },
+        });
+    });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js" integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js" integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="script.js"></script>
+<script type="text/javascript" src="main.js"></script>
 <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
 <script src="https://mediafiles.botpress.cloud/38628bbc-dceb-422d-8790-bab1ef048274/webchat/config.js" defer></script>
 

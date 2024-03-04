@@ -13,7 +13,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="settingdesign.css">
+    <link rel="stylesheet" href="/frontend/profiledesign.css">
     <style>
 
     </style>
@@ -30,7 +30,8 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
                     <li class="nav_item">
                         <a href="adminhome.php" class="nav_link">Home</a>
                         <a href="chat.php" class="nav_link">Chat Room</a>
-                        <a href="notes.php" class="nav_link">Notes</a>
+                        <a href="notes.php" class="nav_link">Notes</a> 
+                        <a href="request.php" class="nav_link">Request</a>
                         <a href="Schedule.php" class="nav_link">Your_Schedule</a>
                     </li>
                 </ul>
@@ -38,8 +39,8 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
                 <a href="logout.php"> <button class="button" id="form-open">SignOut</button></a>
             </nav>
         </header>
-        <br><br><br> 
-        <img id="bg" src="\images\pro.png">
+        <!-- <br><br><br> -->
+        <img id="bg" src="\images\profile.png">
 
         <div class="settings-container" id="settings-container">
 
@@ -76,39 +77,52 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 
                 ?>
             </div><br>
+            <div id="main1">
+                <div id="profile-container1">
+                    <!-- <img id="profile-picture" src="profile-picture.jpg" alt="Profile Picture"> -->
+                    <br>
+                    <div id="user-detail">
+                        <h1><?php
+                            echo " " . $_SESSION['Name'] . " ";
+                            ?></h1>
+                        <p class="uname">@
+                            <?php
+                            echo "$uname";
+                            ?>
+                        </p>
 
-            <div id="profile-container">
+                    </div>
 
-                <div id="user-details">
-                    <h1>
-                        <?php
-                        echo " " . $_SESSION['name'] . " ";
-                        ?>
-                    </h1>
-                    <p>Username: <?php
-                                    echo " " . $_SESSION['Username'] . " ";
+                    <div id="contact-detail" class="contact-detail">
+                        <p>Email: <?php
+                                    echo " " . $_SESSION['Email'] . " ";
                                     ?></p>
+                        <p>Phone: <?php
+                                    echo " " . $_SESSION['Phone_Number'] . " ";
+                                    ?></p>
+                    </div>
+
+
+                    <?php
+                    // Check if the form is submitted echo isset($_SESSION['stu']) ? $_SESSION['stu'] : ''; 
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $username = $_POST["username"];
+                        $_SESSION['stu'] = $username;
+                    }
+                    ?>
+                    <!-- <form id="chatForm" class="chatForm">
+                        <label>Search for the username of the teacher you want to message</label><br><br>
+                        <input type="text" id="username" name="username" required><br>
+                        <span id='usernameError'></span><br>
+                        <input type="button" id='submitBtn' value="Submit" onclick="toggleDiv()" disabled>
+                    </form>
+                    <br><br> -->
+
                 </div>
 
-                <div id="contact-details">
-                    <p>Email: <?php
-                                echo " " . $_SESSION['email'] . " ";
-                                ?></p>
-                    <p>Phone: <?php
-                                echo " " . $_SESSION['phonenumber'] . " ";
-                                ?></p>
-                    <p>Subject: <?php
-                                echo " " . $_SESSION['Subject'] . " ";
-                                ?></p>
-                </div>
-                <!-- <script>
-                        function signout() {
-                            // Add logic to sign out the user here
+                <!-- <div id="icon">
 
-                            alert('You have been signed out.');
-                            window.location.href = "logout.php";
-                        }
-                    </script> -->
+            </div> -->
             </div>
         </div>
     </div>

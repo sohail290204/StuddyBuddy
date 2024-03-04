@@ -83,13 +83,13 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
             transform: scale(0.98);
         }
 
-        #main {
-            color: antiquewhite;
-            background-color: rgba(0, 0, 0, 0.5);
+        #m {
+            color: black;
+            /* background-color: rgba(0, 0, 0, 0.8); */
         }
 
         body {
-
+            background-color: #9440EF;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -99,33 +99,38 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
         table {
             -webkit-text-stroke: 0.1px black;
             border-radius: 24px;
-            border-collapse: collapse;
+            /* border-collapse: collapse; */
             width: 80%;
+            border-collapse: separate;
+            border-spacing: 5px;
             margin: 20px auto;
-            color: antiquewhite;
-            background-color: transparent;
-            box-shadow: 0 0 10px rgba(2, 0, 0, 0.8);
+            color: black;
+            /* background-color: transparent;
+            box-shadow: 0 0 10px rgba(2, 0, 0, 0.8); */
         }
 
         th,
         td {
-            color: antiquewhite;
-            box-shadow: 0 0 10px rgba(2, 0, 0, 0.8);
-            border: 1.5px solid antiquewhite;
+            color: black;
+            /* box-shadow: 0 0 10px rgba(2, 0, 0, 0.8); */
+            /* border: 0.5px solid black; */
             padding: 12px;
+            margin: 10px;
             text-align: center;
 
             /* Center the text in table cells */
         }
 
         th {
-            color: antiquewhite;
-            background-color: transparent;
+            color: black;
+            padding: 15px;
+            border-radius: 30px;
+            background-color: rgb(175,183,227);
 
         }
 
         h1 {
-            color: antiquewhite;
+            color: black;
             text-align: center;
             -webkit-text-stroke: 0.3px black;
         }
@@ -139,6 +144,15 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 
         }
 
+        .container {
+            margin-left: 80px;
+
+            padding-top: 50px;
+            border-radius: 30px;
+            margin-right: 80px;
+            background-color: white;
+        }
+
         #bg {
             height: 100%;
             width: 100%;
@@ -148,6 +162,14 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
             z-index: -1;
             filter: blur(3px);
         }
+
+        .td {
+
+            background-color: #E0E0E8;
+            margin-bottom: 20px;
+            border-radius: 30px;
+        }
+    </style>
     </style>
     <div id="google_translate_element"></div>
     <script type="text/javascript">
@@ -186,40 +208,41 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 
             <a href="logout.php"> <button class="button" id="form-open">SignOut</button></a>
         </nav>
-    </header><img src="\images\schedule.png" id="bg" alt="Background Image">
+    </header> 
     <div id="main">
         <br><br> <br><br> <br><br>
-        <h1>300 Days Preparation Timetable</h1>
+        <div class="container">
+            <h1>300 Days Preparation Timetable</h1>
+            <?php
 
-        <?php
-
-        require 'vendor/autoload.php';
-        $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
-        $database = $client->selectDatabase('Syllabus');
-        $collection = $database->selectCollection('Timetable');
-        $cursor = $collection->find();
-        $foundDocuments = false;
-        echo "<table><tr>";
-        echo "<th>Days</th>";
-        echo "<th>Subject</th>";
-        echo "</tr>";
-
-        // Output specific data from documents using foreach directly on the cursor
-        foreach ($cursor as $document) {
-            $foundDocuments = true;
-            echo "<tr>";
-            echo "<td>" . $document['Days '] . "</td>";
-            echo "<td>" . $document['Subject'] . "</td>";
+            require 'vendor/autoload.php';
+            $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
+            $database = $client->selectDatabase('Syllabus');
+            $collection = $database->selectCollection('Timetable');
+            $cursor = $collection->find();
+            $foundDocuments = false;
+            echo "<table  class='table'><tr  class='tr'>";
+            echo "<th  class='th'>Days</th>";
+            echo "<th  class='th'>Subject</th>";
             echo "</tr>";
-        }
 
-        echo "</table>";
+            // Output specific data from documents using foreach directly on the cursor
+            foreach ($cursor as $document) {
+                $foundDocuments = true;
+                echo "<tr  class='tr'>";
+                echo "<td class='td'>" . $document['Days '] . "</td> ";
+                echo "<td  class='td'> " . $document['Subject'] . "</td> ";
+                echo "</tr> ";
+            }
 
-        // Check if there were no documents
-        if (!$foundDocuments) {
-            echo "<p>No results found</p>";
-        }
-        ?>
+            echo "</table>";
+
+            // Check if there were no documents
+            if (!$foundDocuments) {
+                echo "<p>No results found</p>";
+            }
+            ?>
+        </div><br><br> <br><br>
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js" integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

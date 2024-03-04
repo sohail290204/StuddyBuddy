@@ -115,13 +115,21 @@ a {
   position: relative;
   height: 40vh;
   margin-bottom: 2px;
-  font-size: 55px;
+  font-size: 80px;
 }
+.welcome-t {
+  /* text-align: center;
+  position: relative;*/
+  /* height: 40vh; 
+  margin-bottom:50px; */
+  font-size: 50px;
+}
+
 
 #welcome-text1 {
   text-align: center;
   position: relative;
-  height: 20vh;
+  height: 30vh;margin-top: 25px;
   margin-bottom: 5px;
   font-size: 30px;
 }
@@ -265,7 +273,7 @@ th {
 }
 
 #main1 {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .resource-button {

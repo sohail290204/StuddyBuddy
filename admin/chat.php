@@ -11,7 +11,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="chatdesign.css">
+  <link rel="stylesheet" href="/frontend/chatdesign.css">
 </head>
 
 <body>
@@ -31,25 +31,28 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 
       <a href="logout.php"> <button class="button" id="form-open">SignOut</button></a>
     </nav>
-  </header>
-  <img id="bg" src="\images\chatroom.png">
-  <h2>Chat Messages</h2>
-
-  <div class="container">
-    <div class="con"></div>
-    <input id="msg" class="msg" name="msg">
-    <input class="open" type="submit" name="sub" id="sub">
+  </header>    <br><br> <br><br>
+  <!-- <img id="bg" src="\images\chatroom.png"> -->
+  <div id="msg">
+    <div class="containerrr">
+      <div class="con" id="con"></div>
+      <div id="tetx">
+        <input id="msg" class="msg" name="msg" required>
+        <!-- <input class="open" type="submit" name="sub" id="sub" > -->
+        <button class="open" name="sub" id="sub"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
   </div>
-  <br><br>
-  <div class="container" id="c">
-    <h4>Join the video room</h4>
-    <a href="https://meet.google.com/wvc-gobm-aen" target="_blank" Open>
-      <div class="open" id="open">Open</div>
-    </a>
+  <div id="c">
+    <br><br> 
+    <div class="cc">
+      <h4>Join the video room</h4>
+      <a href="https://meet.google.com/wvc-gobm-aen" target="_blank" Open>
+        <div class="o">Open</div>
+      </a>
+    </div>
   </div> <br>
-  <?php
-  ?>
-  <br> <br><br>
+
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -67,6 +70,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 
     $("#sub").click(function() {
       var chat = $("#msg").val();
+      <?php $_SESSION['check'] = 'f' ?>
       $.post("chat1.php", {
           text: chat
         },

@@ -77,14 +77,6 @@ a {
     transform: scale(0.98);
 }
 
-#profile-container {
-    max-width: 600px;
-    margin: 120px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
 
 #profile-container {
     max-width: 600px;
@@ -97,6 +89,7 @@ a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
+
 
 #user-details {
     text-align: center;

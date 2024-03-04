@@ -111,7 +111,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
         $n = $document['Date'];
         $currentDate = new DateTime();
         $n = $currentDate->format('Y-m-d');
-        echo "<div id='welcome-text'><b> Welcome $uname, Today's date is: $n </b></div>";
+        echo "<div id='welcome-text'><b> Welcome $uname,"; echo "<br>"; echo "<span class='welcome-t'> Today's date is: $n </b></span></div>";
         echo "<div id='welcome-text1'> You started on  " . $document['Date'] . " </div>";
       } else {
         // $currentDate = new DateTime();

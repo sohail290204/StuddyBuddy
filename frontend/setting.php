@@ -13,10 +13,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
-    <link rel="stylesheet" href="settingdesign.css">
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="/frontend/profiledesign.css">
 </head>
 
 <script>

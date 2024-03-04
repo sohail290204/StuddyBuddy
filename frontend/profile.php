@@ -47,7 +47,7 @@ if ($document) {
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<img id="bg" src="\images\pro.png">
+<img id="bg" src="\images\profile.png">
 
 <body>
 
@@ -59,9 +59,9 @@ if ($document) {
             <ul class="nav_items">
                 <li class="nav_item">
                     <a href="home.php" class="nav_link">Home</a>
-                    <a href="Schedule.php" class="nav_link">Your_Schedule</a>
+                    <a href="Schedule.php" class="nav_link">Your Schedule</a>
                     <a href="notes.php" class="nav_link">Notes</a>
-                    <a href="chat.php" class="nav_link">Chat Room</a>
+                    <!-- <a href="chat.php" class="nav_link">Chat Room</a> -->
                 </li>
             </ul>
 
@@ -73,17 +73,18 @@ if ($document) {
             <!-- <img id="profile-picture" src="profile-picture.jpg" alt="Profile Picture"> -->
             <br>
             <div id="user-details">
-                <h1>
+                <h1><?php
+                    echo " " . $_SESSION['name'] . " ";
+                    ?></h1>
+                <p class="uname">@
                     <?php
                     echo "$uname";
                     ?>
-                </h1>
-                <p>Name: <?php
-                            echo " " . $_SESSION['name'] . " ";
-                            ?></p>
+                </p>
+
             </div>
 
-            <div id="contact-details">
+            <div id="contact-details" class="contact-details">
                 <p>Email: <?php
                             echo " " . $_SESSION['email'] . " ";
                             ?></p>
@@ -100,28 +101,32 @@ if ($document) {
                 $_SESSION['stu'] = $username;
             }
             ?>
-            <form id="chatForm">
+            <form id="chatForm" class="chatForm">
                 <label>Search for the username of the teacher you want to message</label><br><br>
                 <input type="text" id="username" name="username" required><br>
                 <span id='usernameError'></span><br>
-                <input type="button" id='submitBtn' value="Submit" onclick="toggleDiv()">
+                <input type="button" id='submitBtn' value="Submit" onclick="toggleDiv()" disabled>
             </form>
             <br><br>
 
 
-            <div id="chat-box" style="display: none;">
-                <h2>Chat with <?php echo isset($_SESSION['stu']) ? $_SESSION['stu'] : ''; ?></h2>
-                <div class="container">
-                    <div class="con"></div>
-                    <form method="post" action="">
-                        <textarea placeholder="Type your message..." id="msg" required></textarea>
-                        <!-- <input type="text" placeholder="Type your message..." id="msg" required> -->
-                        <span id='m'></span><br><br>
-                        <button type="button" id="sub" disabled>Send</button>
-                    </form>
-                </div>
-            </div>
 
+            <!-- <div id="icon">
+
+            </div> -->
+
+        </div>
+        <div id="chat-box" class="chat-box" style="display: none;">
+            <h2>Chat with <?php echo isset($_SESSION['stu']) ? $_SESSION['stu'] : ''; ?></h2>
+            <div class="container">
+                <div class="con"></div>
+                <form method="post" action="">
+                    <textarea placeholder="Type your message..." id="msg" required></textarea>
+                    <!-- <input type="text" placeholder="Type your message..." id="msg" required> -->
+                    <span id='m'></span><br><br>
+                    <button type="button" id="sub" disabled>Send</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>
@@ -129,6 +134,15 @@ if ($document) {
     document.addEventListener("DOMContentLoaded", function() {
         var scrollableDiv = document.getElementById("con"); // corrected ID to "con"
         scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+    });
+</script>
+<script>
+    var input = document.getElementById("msg");
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("sub").click();
+        }
     });
 </script>
 <script>
@@ -259,6 +273,15 @@ if ($document) {
         updateSubmitButtonState();
     });
 </script>
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en'
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js" integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js" integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="script.js"></script>
