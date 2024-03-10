@@ -85,7 +85,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
                     <br>
                     <div id="user-detail">
                         <h1><?php
-                            echo " " . $_SESSION['Name'] . " ";
+                            echo "<span style='color:rgb(230, 114, 33)'> " . $_SESSION['Name'] . "</span> ";
                             ?></h1>
                         <p class="uname">@
                             <?php

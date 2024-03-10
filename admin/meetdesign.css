@@ -2,12 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "montserrat";
+    font-family: Arial, sans-serif;
 }
 
 #main {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.45);
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    text-align: center;
 }
 
 body {
@@ -77,17 +82,17 @@ a {
     transform: scale(0.98);
 }
 
-#profile-container {
-    max-width: 600px;
+/* #profile-container {
+    width: 600px;
     margin: 120px auto;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-}
+} */
 
 #profile-container {
-    max-width: 600px;
+    width: 1050px;
     color: #f1f1f1;
     margin: 120px auto;
     background-color: transparent;
@@ -95,7 +100,7 @@ a {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 40px;
 }
 
 #user-details {
@@ -105,10 +110,13 @@ a {
 
 #user-details h1 {
     margin: 0;
+    font-size: 50px;
 }
 
 #contact-details {
     margin-bottom: 20px;
+    /* margin-left: 50px; */
+    text-align: center;
 }
 
 #contact-details p {
@@ -122,7 +130,7 @@ a {
 }
 
 #chat-box textarea {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     color: #f1f1f1;
     background-color: rgba(0, 0, 0, 0.8);
@@ -145,16 +153,32 @@ a {
 
 .container {
     margin: 20px auto;
-    max-width: 600px;
+    width: 800px;
     color: #f1f1f1;
     padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 15px;
     box-sizing: border-box;
     border: 2px solid #DB8148;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
+form {
+    text-align: center;
+}
+
+.containerr {
+    margin: 20px auto;
+    width: 900px;
+    align-items: center;
+    color: #f1f1f1;
+    padding: 35px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 30px;
+}
 
 .time-right {
     float: right;
@@ -206,30 +230,34 @@ a {
 #sub {
     font-size: 17px;
     padding: 10px 22px;
-    width: 100%;
+    width: 30%;
     border-radius: 20px;
     background: transparent;
-    background-color: #b48558;
+    background-color: transparent;
     color: antiquewhite;
-    border: 2px solid #75583e;
+    border: 2px solid #DB8148;
     cursor: pointer;
-    transition: background 0.3s ease, padding 0.3s ease, border 0.3s ease;
+    transition: background 0.3s ease, padding 0.3s ease, border 0.3s ease, width 0.3s;
     padding: 10px;
 
 }
 
 #sub:hover {
-    background: black;
+    width: 40%;
+    background: #DB8148;
     padding: 10px 30px;
-    border: 2px solid #c59479;
+    color: black;
+    border: 2px solid black;
 }
 
 .con {
-    height: 300px;
+    height: 500px;
     overflow: scroll;
-    padding-right: 10px;
-
-    padding-left: 10px;
+    background-color: transparent;
+    border:none;
+    scrollbar-color: transparent;
+    width: 850px;
+    padding: 10px;
 }
 
 .con::-webkit-scrollbar {
@@ -238,7 +266,7 @@ a {
 
 .con::-webkit-scrollbar-thumb {
     border-radius: 24px;
-    background-color: #616062;
+    background-color: transparent;
 }
 
 .con::-webkit-scrollbar-track {

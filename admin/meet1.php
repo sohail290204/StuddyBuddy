@@ -33,7 +33,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
         ]
     ];
     // $cursor = $collection->find($filter);
-    $cursor = $collection->find($filter, ['sort' => ['Time' => -1], 'limit' => 50]);
+    $cursor = $collection->find($filter, ['sort' => ['Time' => -1], 'limit' =>50]);
     $documents = $cursor->toArray();
     $res = "";
 

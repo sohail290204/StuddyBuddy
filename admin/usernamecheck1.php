@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"])) {
         $usernameExists1 = checkUsernameExists1($username);
         if ($usernameExists1) {
         } else {
-            echo "<span style='color: red;'>NO teacher exists with this username</span>";
+            echo "<span style='color: red;'>NO student exists with this username</span>";
         }
     } else {
         $usernameExists = checkUsernameExists($username);

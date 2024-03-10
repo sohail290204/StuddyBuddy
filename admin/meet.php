@@ -34,6 +34,33 @@ if ($document) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<script>
+    // Smooth scroll animation using GSAP
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // GSAP ScrollTrigger for the animation
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to("#todays-topic", {
+            opacity: 100, // Initial opacity
+            scrollTrigger: {
+                trigger: "#todays-topic",
+                start: "top bottom", // Trigger animation when the top of the element reaches the bottom of the viewport
+                end: "center center", // End the animation when the center of the element reaches the center of the viewport
+                scrub: true, // Smooth scrubbing effect
+            },
+        });
+    });
+</script>
 
 <head>
     <meta charset="UTF-8">
@@ -63,27 +90,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul class="nav_items">
                 <li class="nav_item">
                     <a href="adminhome.php" class="nav_link">Home</a>
-                    <a href="Schedule.php" class="nav_link">Your_Schedule</a>
+                    <a href="Schedule.php" class="nav_link">Schedule</a>
                     <a href="notes.php" class="nav_link">Notes</a>
                     <a href="setting.php" class="nav_link">Profile</a>
+                    <a href="#containerr" class="nav_link">message</a>
                 </li>
             </ul>
 
             <a href="logout.php"> <button class="button" id="form-open">SignOut</button></a>
         </nav>
     </header>
-    <div id="main1">
+    <div id="main">
+        <br>
         <div id="profile-container">
             <!-- <img id="profile-picture" src="profile-picture.jpg" alt="Profile Picture"> -->
 
             <div id="user-details">
-                <h1>
-                    <?php
-                    echo "$uname";
-                    ?>
-                </h1>
+                  <span style='color:#DB8148'>  <h1>
+                 <?php
+                                                    echo "$uname";
+                                                    ?>
+                </h1></span>
                 <p>Name: <?php
-                            echo " " . $_SESSION['name'] . " ";
+                            echo "" . $_SESSION['name'] . "";
                             ?></p>
             </div>
 
@@ -95,21 +124,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             echo " " . $_SESSION['phonenumber'] . " ";
                             ?></p>
             </div>
-
+            <br>
             <div id="chat-box">
 
-                <h2>Chat with <?php echo "$uname"; ?></h2>
-                <div class="container">
+                <h2>Chat with <span style='color:#DB8148'><?php echo "$uname"; ?></span></h2>
+                <div class="containerr">
                     <div class="con"></div>
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                        <textarea placeholder="Type your message..." id="msg"></textarea><br>
-                        <button type="button" id="sub" >Send</button>
+                    <form method="post" id="containerr" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                        <br> <textarea placeholder="Type your message..." id="msg"></textarea><br>
+                        <br> <button type="button" id="sub">Send</button>
                     </form>
                 </div>
 
 
             </div>
-        </div>
+        </div> <br> <br>
+
     </div>
 </body>
 <script type="text/javascript">
@@ -123,8 +153,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $("#sub").click(function() {
         var chat = $("#msg").val();
-        <?php $_SESSION['check'] = 'h' ?>
-        $.post("chat1.php", {
+
+        $.post("chat2.php", {
                 text: chat
             },
             function(data, status) {

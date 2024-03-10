@@ -23,9 +23,10 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
       <ul class="nav_items">
         <li class="nav_item">
           <a href="adminhome.php" class="nav_link">Home</a>
-          <a href="Schedule.php" class="nav_link">Your_Schedule</a>
+          <a href="Schedule.php" class="nav_link">Your Schedule</a>
           <a href="notes.php" class="nav_link">Notes</a>
-          <a href="setting.php" class="nav_link">Profile</a>
+          <a href="setting.php" class="nav_link">Profile</a> 
+          <a href="request.php" class="nav_link">Request</a>
         </li>
       </ul>
 
@@ -36,7 +37,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     <img id="bg" src="\images\chatroom.png">
     <div id="msgg">
       <div class="containerrr">
-        <div class="con" id="con"></div>
+        <div class="conn" id="con"></div>
         <div id="tetx">
           <input id="msg" class="msg" name="msg" required>
           <!-- <input class="open" type="submit" name="sub" id="sub" > -->
@@ -72,12 +73,12 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
       $("#sub").click(function() {
         var chat = $("#msg").val();
         console.log(chat);
-        <?php $_SESSION['check'] = 'f' ?>
+
         $.post("chat1.php", {
             text: chat
           },
           function(data, status) {
-            document.getElementsByClassName('con')[0].innerHTML = data;
+            document.getElementsByClassName('conn')[0].innerHTML = data;
           });
         $("#msg").val("");
         return false;
@@ -88,7 +89,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
       function runFunction() {
         $.post("chat3.php",
           function(data, status) {
-            document.getElementsByClassName('con')[0].innerHTML = data;
+            document.getElementsByClassName('conn')[0].innerHTML = data;
           });
       }
     </script>

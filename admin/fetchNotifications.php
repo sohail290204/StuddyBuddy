@@ -21,7 +21,7 @@ $res = "";
 if (count($documents) > 0) {
     foreach ($documents as $document) {
         $res = $res . '<div class="container">';
-        $res = $res . '<b> Students: ' . $document['Students_request'] . '</b>';
+        $res = $res . '<b> Student: ' . $document['Students_request'] . '</b>';
         $res = $res . '<p> <b>Doubt:</b> ' . $document['Doubt_Topic'] . '</b>'; 
         $res = $res . '<span class="time-right">' . $document['Time'] . '</div>';
     }

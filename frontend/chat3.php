@@ -19,7 +19,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     if (count($documents) > 0) {
         foreach ($documents as $document) {
             $res = $res . '<div class="container">';
-            $res = $res . '<b>' . $document['Username'] . '</b>';
+            $res = $res . '<b><span style="color:rgb(230, 114, 33)">' . $document['Username'] . '</span></b>';
             $res = $res . '<p>' . $document['Message'];
             $res = $res . '<span class="time-right">' . $document['Time'] . '</span></div>';
         }

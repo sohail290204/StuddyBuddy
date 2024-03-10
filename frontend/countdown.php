@@ -160,8 +160,8 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
       }
 
 
-      $sc = $daysRemaining;
-      // $sc =300;
+      // $sc = $daysRemaining;
+      $sc =300;
 
       $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
       $database = $client->selectDatabase('Syllabus');
@@ -196,7 +196,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
         if ($Day == $scc) {
           echo " <pre><br> Name: $Subject<br><br> </pre> ";
           echo "<hr style='background-color: white; margin: 20px 0;'>";
-          if ($scc == 24 || $scc == 25 || $scc == 26 || $scc == 27 || $scc == 28 || $scc == 30 || $scc == 54 || $scc == 56 || $scc == 57 || $scc == 58 ||  $scc == 84 || $scc == 85 || $scc == 86 || $scc == 87 || $scc == 88 ||  $scc == 114 || $scc == 115 || $scc == 116 || $scc == 117 || $scc == 118 ||  $scc == 146 || $scc == 147 || $scc == 148 || $scc == 149 || $scc == 150 || $scc == 151  || $scc == 177 || $scc == 178 || $scc == 179 || $scc == 180 || $scc == 181 ||  $scc == 200 || $scc == 201 || $scc == 202 || $scc == 203 || $scc == 204 || $scc == 205 || $scc >= 291 && $scc <= 299) {
+          if ($scc == 24 || $scc == 25 || $scc == 26 || $scc == 27 || $scc == 28 || $scc == 54 || $scc == 56 || $scc == 57 || $scc == 58 ||  $scc == 84 || $scc == 85 || $scc == 86 || $scc == 87 || $scc == 88 ||  $scc == 114 || $scc == 115 || $scc == 116 || $scc == 117 || $scc == 118 ||  $scc == 146 || $scc == 147 || $scc == 148 || $scc == 149 || $scc == 150 || $scc == 151  || $scc == 177 || $scc == 178 || $scc == 179 || $scc == 180 || $scc == 181 ||  $scc == 200 || $scc == 201 || $scc == 202 || $scc == 203 || $scc == 204 || $scc == 205 || $scc >= 291 && $scc <= 299) {
             echo "";
           } elseif ($scc == 29 || $scc == 59 || $scc == 89 || $scc == 119 || $scc == 152 || $scc == 182 || $scc == 206) {
             echo "<br><br><br><br><input type='button' id='b' value='Click here to give exam' onclick='redirectToExample()'> <br><br>  <br><br>  <hr><br><br>    ";
@@ -360,15 +360,15 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
           $score = $userDocument['score'];
 
           if ($score < 500) {
-            echo "You need some serious progress!<br>";
+            echo "<span style='color:rgb(230,114,33)'>You need some serious progress! </span ><br>";
           } elseif ($score < 800)
-            echo "You are an average student!<br>";
+            echo "<span style='color:rgb(230,114,33)'>You are an average student!</span ><br>";
         } elseif ($score < 1000) {
-          echo "You are doing a good progress!<br>";
+          echo "<span style='color:rgb(230,114,33)'>You are doing a good progress!</span ><br>";
         } elseif ($score < 1100) {
-          echo "You are an excellent student";
+          echo "<span style='color:rgb(230,114,33)'>You are an excellent student</span ><br>";
         } else {
-          echo "You have not appeared for any exam!<br>";
+          echo "<span style='color:rgb(230,114,33)'>You have not appeared for any exam!</span ><br>";
         }
         echo "<br><hr>";
       } else {

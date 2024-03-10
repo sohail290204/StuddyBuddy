@@ -20,7 +20,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     if (count($documents) > 0) {
         foreach ($documents as $document) {
             $res .= '<div class="container">';
-            $res .= '<b> ' . $document['Username'] . '</b>'; // Assuming 'Student' is the field you want to display
+            $res .= '<b><span style="color:rgb(230, 114, 33)"> ' . $document['Username'] . '</span></b>'; // Assuming 'Student' is the field you want to display
             $res .= '<p>' . $document['Message'];
             $res .= '<span class="time-right">' . $document['Time'] . '</span></div>';
         }

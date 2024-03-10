@@ -118,10 +118,10 @@ h2 {
     text-align: center;
 }
 
-h1 {
-    color: #000000;
+/* h1 {
+    color: #ffffff;
     font-size: 20px;
-}
+} */
 
 #c,
 #t {
@@ -149,7 +149,7 @@ td {
 
 td {
     width: 150px;
-    background-color: #E0E0E8;
+    background-color: rgb(224,224,232);
     margin-bottom: 20px;
     border-radius: 30px;
 }
@@ -166,7 +166,15 @@ th {
     overflow: scroll;
     padding-right: 10px;
     background-color: transparent;
-    height: 420px;
+    height: 460px;
+    /* padding-top: 30px;
+    padding-left: 10px; */
+}
+.conn {
+    overflow: scroll;
+    padding-right: 10px;
+    background-color: transparent;
+    height: 500px;
     /* padding-top: 30px;
     padding-left: 10px; */
 }
@@ -177,12 +185,12 @@ th {
     margin-right: 20px;
     /* margin-left: 50px; */
     padding-top: 100px;
-    max-width: 600px;
-    border: 3px solid #000000;
+    max-width: 800px;
+    border: none;
     color: #000000;
     border-radius: 15px;
     padding: 15px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(224,224,232);
 }
 
 .c {
@@ -197,7 +205,7 @@ th {
     color: #000000;
     padding: 30px;
     border-radius: 15px;
-    background-color: rgb(224, 222, 222);
+    background-color: rgb(224,224,232);
 }
 
 .cc {
@@ -234,15 +242,15 @@ th {
     position: relative;
     top: 120px;
     left: 280px;
-    height: 500px;
-    /* border: 3px solid #000000; */
+    height: 550px;
+    border: 3px solid rgb(230, 114, 33);
     color: #f1f1f1;
     border-radius: 40px;
     padding-right: 15px;
     padding-left: 15px;
-    padding-top: 15px;
+    padding-top: 25px;
 
-    background-color: rgb(230, 114, 33);
+    background-color: transparent;
     /* background-color: rgb(224, 222, 222); */
     /* background-color: rgb(28,84,179); */
     /* background-color: rgb(236, 120, 0); */
@@ -266,19 +274,19 @@ th {
 
     margin: 20px auto;
     /* max-width: 600px; */
-    width: 700px;
+    width: 900px;
     top: 60px;
     left: 280px;
     height: 580px;
-    height: 500px;
-    /* border: 3px solid #000000; */
+    /* height: 500px; */
+    border: 3.5px solid rgb(230, 114, 33);
     color: #f1f1f1;
     border-radius: 40px;
     padding-right: 15px;
     padding-left: 15px;
     padding-top: 15px;
 
-    background-color: rgb(230, 114, 33);
+    background-color: transparent;
 }
 
 .container1 {
@@ -308,18 +316,18 @@ th {
     left: 150px;
     text-align: center;
     max-width: 80%;
-    border: none;
+    border: 4px solid rgb(191, 95, 27);
     color: #000000;
     border-radius: 40px;
     padding-right: 40px;
     padding-left: 40px;
     padding-top: 50px;
-    background-color: rgb(234, 119, 2);
+    background-color: transparent;
 }
 
 .container2 label {
     font-size: 80px;
-    color: #000000;
+    color: #ffffff;
 }
 
 
@@ -387,6 +395,12 @@ th {
     background-color: white;
     color: rgb(0, 0, 0);
     margin-bottom: 10px;
+    transition: background-color 0.3s, width 0.3s;
+}
+.msg:hover{
+    width: 65%;
+    border: 2px solid black;
+    background-color:antiquewhite ;
 }
 
 .msg1 {
@@ -420,13 +434,6 @@ th {
     display: table;
 }
 
-.container img {
-    float: left;
-    max-width: 60px;
-    width: 100%;
-    margin-right: 20px;
-    border-radius: 50%;
-}
 
 .container img.right {
     float: right;
@@ -457,12 +464,26 @@ th {
     width: 12px;
 }
 
-/* .con::-webkit-scrollbar-thumb {
+.con::-webkit-scrollbar-thumb {
     border-radius: 24px;
-    background-color: #E6A568;
-} */
+    background-color: transparent;
+}
 
 .con::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+
+.conn::-webkit-scrollbar {
+    width: 12px;
+}
+
+.conn::-webkit-scrollbar-thumb {
+    border-radius: 24px;
+    background-color: transparent;
+}
+
+.conn::-webkit-scrollbar-track {
     background-color: transparent;
 }
 

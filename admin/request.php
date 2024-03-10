@@ -25,7 +25,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 </head>
 
 <body>
-    <!-- <img id="bg" src="\images\request.png"> -->
+    <img id="bg" src="\images\request.png">
     <header class="header" class="mainMenu">
 
         <nav class="nav">
@@ -44,11 +44,11 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
             <a href="logout.php"> <button class="button" id="form-open">SignOut</button></a>
         </nav>
     </header>
-    <div id="main-container" class="main-container">
+    <div id="main">
         <br> <br> <br> <br>
         <div style="text-align: center;">
             <div id="containerr" class="containerr">
-                <label><b>Request Notifications</b></label>
+                <label><b>Request Notifications</b></label><br>
                 <div class="con"></div>
             </div>
         </div>
@@ -68,8 +68,8 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 
                 </div>
             </div>
-        </div>
-    </div> <br> <br>
+        </div><br> <br>
+    </div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -81,15 +81,20 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
         // Function to check if username is available
         function checkUsernameAvailability() {
             let username = $("#username").val();
+
             <?php $_SESSION['f'] = 'h' ?>
             $.post("usernamecheck1.php", {
 
                 username: username
             }, function(data) {
+
                 $("#usernameError").html(data);
                 // Enable or disable the submit button based on validation results
                 updateSubmitButtonState();
+
             });
+           
+
         }
 
         // Function to check if passwords match
@@ -100,14 +105,19 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
             let usernameExists = $("#usernameError").text().includes("exists");
             let disableButton = usernameExists;
             $("#submitBtn").prop("disabled", disableButton);
+          
         }
 
         // Event listeners for input fields
         $("#username").on("input", checkUsernameAvailability);
         // $("#reenterpassword").on("input", checkPasswordMatch);
-
+        // emplty();
         // Initial button state check
         updateSubmitButtonState();
+   
+        // function emplty() {
+        //     $("#username").val("");
+        // }
     });
 </script>
 

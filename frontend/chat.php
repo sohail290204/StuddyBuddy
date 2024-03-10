@@ -104,7 +104,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     echo '<div class="container1" id="t">';
     echo "<br>";
 
-    echo "<label>Search for the username of the teacher you want</label><br><br>";
+    echo "<label >Search for the username of the teacher you want</label><br><br>";
     echo '<input type="text" class="msg1" id="username" name="username" required><br>';
     echo " <span id='usernameError'></span><br>";
     echo "<br>";
@@ -120,7 +120,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     echo '<div  class="container2">';
 
     echo "";
-    echo "<div id='list' class='list'><h1> List of teachers available with us </h1></div>";
+    echo "<div id='list' class='list'  style='color:white'><h1> List of teachers available with us </h1></div>";
     echo "";
 
     require 'vendor/autoload.php';
