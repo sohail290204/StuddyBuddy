@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     font-size: 20px;
     margin: 50px;
     background-color: transparent;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 1);
     padding-right: 80px;
     padding-left: 80px;
     border: 2px solid #fff;
@@ -221,7 +221,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <img id="bg" src="\images\dailyexam.png">
   <div id="quiz-container">
     <br>
-    <h2>MCQ Quiz</h2>
+    <h2 style="color: #C5652B;"><b>MCQ Quiz</b></h2>
     <?php
     foreach ($mcqs as $mcq) {
       $d = $mcq['Day'];

@@ -30,7 +30,6 @@ if ($msg == "") {
 
     // Select a collection
     $collection = $database->selectCollection('Chat');
-
     date_default_timezone_set("Asia/Kolkata");
     $t = date("m/d/Y h:i:s a", time());
     // Create a document to insert
@@ -39,13 +38,17 @@ if ($msg == "") {
         'Message' => $msg,
         'Time' => $t,
     ];
-
     // Insert the document into the collection
     $result = $collection->insertOne($document);
 
     // Check if the insertion was successful
     if ($result->getInsertedCount() > 0) {
         // echo "Document inserted successfully!";
+        // $document = [
+        //     'Username' => $uname,
+        //     'Message' => "hellllll",
+        //     'Time' => $t,
+        // ];
         header("Location:chat.php");
     } else {
         echo  "<script>alert('error');</script>";

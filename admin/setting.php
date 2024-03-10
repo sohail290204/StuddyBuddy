@@ -30,7 +30,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
                     <li class="nav_item">
                         <a href="adminhome.php" class="nav_link">Home</a>
                         <a href="chat.php" class="nav_link">Chat Room</a>
-                        <a href="notes.php" class="nav_link">Notes</a> 
+                        <a href="notes.php" class="nav_link">Notes</a>
                         <a href="request.php" class="nav_link">Request</a>
                         <a href="Schedule.php" class="nav_link">Your_Schedule</a>
                     </li>
@@ -66,6 +66,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
                     $e = $document['Email'];
                     $p = $document['Phone_Number'];
                     $ee = $document['Subject'];
+                    $ex = $document['Experience'];
 
 
                     $_SESSION['Name'] = $n;
@@ -73,6 +74,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
                     $_SESSION['Email'] = $e;
                     $_SESSION['Phone_Number'] = $p;
                     $_SESSION['Subject'] = $ee;
+                    $_SESSION['Experience'] = $ex;
                 }
 
                 ?>
@@ -100,6 +102,13 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
                         <p>Phone: <?php
                                     echo " " . $_SESSION['Phone_Number'] . " ";
                                     ?></p>
+                        <p>Subject: <?php
+                                    echo " " . $_SESSION['Subject'] . " ";
+                                    ?></p>
+                        <p>
+                            Experience: <?php
+                                        echo " " . $_SESSION['Experience'] . " ";
+                                        ?></p>
                     </div>
 
 

@@ -56,38 +56,38 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
           <a href="profile.php" class="nav_link">Profile</a>
           <a href="#msg" class="nav_link">ChatBox</a>
           <a href="#c" class="nav_link">Group Study</a>
-          <a href="#list" class="nav_link">Teachers List</a>
+          <!-- <a href="#list" class="nav_link">Teachers List</a> -->
         </li>
       </ul>
 
       <a href="logout.php"> <button class="button" id="form-open">SignOut</button></a>
     </nav>
   </header>
-
-  <!-- <img id="bg" src="\images\chatroom.png"> -->
-  <!-- <h2>Chat Messages</h2> -->
-  <!-- <br><br> -->
-  <div id="msg">
-    <div class="containerr">
-      <div class="con" id="con"></div>
-      <div id="tetx">
-        <input id="msg" class="msg" name="msg" required>
-        <!-- <input class="open" type="submit" name="sub" id="sub" > -->
-        <button class="open" name="sub" id="sub"><i class="fas fa-paper-plane"></i></button>
+  <div id="main">
+    <img id="bg" src="\images\chatroom.png">
+    <!-- <h2>Chat Messages</h2> -->
+    <!-- <br><br> -->
+    <div id="msgg">
+      <div class="containerr">
+        <div class="con" id="con"></div>
+        <div id="tetx">
+          <input id="msg" class="msg" name="msg" required>
+          <!-- <input class="open" type="submit" name="sub" id="sub" > -->
+          <button class="open" name="sub" id="sub"><i class="fas fa-paper-plane"></i></button>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="c">
-    <br><br> <br><br>
-    <div class="c">
-      <h4>Join the video room</h4>
-      <a href="https://meet.google.com/wvc-gobm-aen" target="_blank" Open>
-        <div class="o">Open</div>
-      </a>
-    </div>
-  </div> <br>
+    <div id="c">
+      <br><br> <br><br>
+      <div class="c">
+        <h4>Join the video room</h4>
+        <button class="o"> <a href="https://meet.google.com/wvc-gobm-aen" target="_blank" Open>
+            <div>Open</div>
+          </a> </button>
+      </div>
+    </div> <br>
 
-  <!-- <div class="container" id="c">
+    <!-- <div class="container" id="c">
     <h4>List of student on our platform</h4>
     <?php
     require 'vendor/autoload.php';
@@ -97,68 +97,69 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 
     ?>
   </div><br> -->
-  <?php
-  $_SESSION["first"] = "eight";
-  echo "<form action='register1.php' method='post'>";
+    <?php
+    $_SESSION["first"] = "eight";
+    echo "<form action='register1.php' method='post'>";
 
-  echo '<div class="container1" id="t">';
-  echo "<br>";
+    echo '<div class="container1" id="t">';
+    echo "<br>";
 
-  echo "<label>Search for the username of the teacher you want</label><br><br>";
-  echo '<input type="text" class="msg1" id="username" name="username" required><br>';
-  echo " <span id='usernameError'></span><br>";
-  echo "<br>";
-  echo "<label>Enter your Doubt</label><br><br>";
-  echo '<input type="text" class="msg1" id="topic" name="topic" required><br><br>';
-  // echo '  <input type="submit"  id="submitBtn" class="open" disabled>';
-  echo '<button id="submitBtn"  disabled>Submit </button>';
-  echo " </form>";
-  echo "<br><br> <br><br>";
-  echo "</div>";
-  echo "<div id='list'> <br> <br> <br>"; echo "</div>";
-  echo '<div  class="container2"';
+    echo "<label>Search for the username of the teacher you want</label><br><br>";
+    echo '<input type="text" class="msg1" id="username" name="username" required><br>';
+    echo " <span id='usernameError'></span><br>";
+    echo "<br>";
+    echo "<label>Enter your Doubt</label><br><br>";
+    echo '<input type="text" class="msg1" id="topic" name="topic" required><br><br>';
+    // echo '  <input type="submit"  id="submitBtn" class="open" disabled>';
+    echo '<button id="submitBtn"  disabled>Submit </button>';
+    echo " </form>";
+    echo "<br><br> <br><br>";
+    echo "</div>";
+    echo "<div > <br> <br> <br> <br>";
+    echo "</div>";
+    echo '<div  class="container2">';
 
-  echo "";
-  echo "<label class='label'> List of teachers available with us</label>";
-  echo "";
+    echo "";
+    echo "<div id='list' class='list'><h1> List of teachers available with us </h1></div>";
+    echo "";
 
-  require 'vendor/autoload.php';
-  $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
-  $database = $client->selectDatabase('Syllabus');
-  $collection = $database->selectCollection('admin');
-  $cursor = $collection->find();
-  $foundDocuments = false;
-  echo "<table><tr>";
-  echo "<th>Teacher's Name</th>";
-  echo "<th>Teacher's Userame</th>";
-  echo "<th>Subject</th>";
-  echo "</tr>";
-
-  // Output specific data from documents using foreach directly on the cursor
-  foreach ($cursor as $document) {
-    $foundDocuments = true;
-    echo "<tr>";
-    echo "<td>" . $document['Name'] . "</td>";
-    echo "<td>" . $document['Username'] . "</td>";
-    echo "<td>" . $document['Subject'] . "</td>";
-    // echo '<td> <a href="request.php" target="_blank" Open><div id="open">Open</div></a></td>';
+    require 'vendor/autoload.php';
+    $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
+    $database = $client->selectDatabase('Syllabus');
+    $collection = $database->selectCollection('admin');
+    $cursor = $collection->find();
+    $foundDocuments = false;
+    echo "<table><tr>";
+    echo "<th>Teacher's Name</th>";
+    echo "<th>Teacher's Userame</th>";
+    echo "<th>Subject</th>";
     echo "</tr>";
-  }
 
-  echo "</table>";
-  echo "<br>";
-  echo "</div>";
-  ?>
+    // Output specific data from documents using foreach directly on the cursor
+    foreach ($cursor as $document) {
+      $foundDocuments = true;
+      echo "<tr>";
+      echo "<td>" . $document['Name'] . "</td>";
+      echo "<td>" . $document['Username'] . "</td>";
+      echo "<td>" . $document['Subject'] . "</td>";
+      // echo '<td> <a href="request.php" target="_blank" Open><div id="open">Open</div></a></td>';
+      echo "</tr>";
+    }
 
+    echo "</table>";
+    echo "<br>";
+    echo "</div>";
+    ?>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script>
+  <!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
       var scrollableDiv = document.getElementById("con"); // corrected ID to "con"
       scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
     });
-  </script>
+  </script> -->
   <script>
     $(document).ready(function() {
       // Function to check if username is available
@@ -211,7 +212,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
       return false;
     });
 
-    setInterval(runFunction, 1000);
+    setInterval(runFunction, 100);
 
     function runFunction() {
       $.post("chat3.php",

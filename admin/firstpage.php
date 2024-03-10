@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Anta&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Madimi+One&display=swap" rel="stylesheet">
     <style>
@@ -9,34 +11,57 @@
             font-family: "Kanit", sans-serif;
         }
     </style>
-      <script>
-    // Smooth scroll animation using GSAP
-    document.addEventListener("DOMContentLoaded", function() {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
+    <script>
+        // Smooth scroll animation using GSAP
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
 
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // GSAP ScrollTrigger for the animation
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.to("#todays-topic", {
+                opacity: 100, // Initial opacity
+                scrollTrigger: {
+                    trigger: "#todays-topic",
+                    start: "top bottom", // Trigger animation when the top of the element reaches the bottom of the viewport
+                    end: "center center", // End the animation when the center of the element reaches the center of the viewport
+                    scrub: true, // Smooth scrubbing effect
+                },
+            });
         });
-      });
-
-      // GSAP ScrollTrigger for the animation
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.to("#todays-topic", {
-        opacity: 100, // Initial opacity
-        scrollTrigger: {
-          trigger: "#todays-topic",
-          start: "top bottom", // Trigger animation when the top of the element reaches the bottom of the viewport
-          end: "center center", // End the animation when the center of the element reaches the center of the viewport
-          scrub: true, // Smooth scrubbing effect
-        },
-      });
-    });
-  </script>
+    </script>
 </head>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $query = $_POST['query'];
+    require 'vendor/autoload.php';
+    $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
+    $database = $client->selectDatabase('Syllabus');
+    $collection = $database->selectCollection('query');
+    date_default_timezone_set("Asia/Kolkata");
+    $t = date("m/d/Y h:i:s a", time());
+    $document = [
+        'Query' => $query,
+        'Time' => $t,
+    ];
+    $result = $collection->insertOne($document);
+    if ($result->getInsertedCount() > 0) {
+        echo "Document inserted successfully!";
+        header("Location:firstpage.php");
+    } else {
+        echo  "<script>alert('error');</script>";
+        echo "Failed to insert document.";
+    }
+}
+?>
 
 <body>
 
@@ -46,16 +71,17 @@
             <ul class="nav_items">
                 <li class="nav_item">
                     <a href="#m" class="nav_link">Studdy Buddy</a>
-                    <a href="#studnet" class="nav_link">Student</a>
+                    <a href="#student" class="nav_link">Student</a>
                     <a href="#teacher" class="nav_link">Teacher</a>
                     <!-- <a href="#" class="nav_link">Profile</a> -->
                     <!-- <a href="/admin/request.php" class="nav_link">Request</a> -->
                 </li>
             </ul>
-            <a href="/admin/adminlogin.php"><button class="button1" id="form-open">Teacher Login</button></a>
-            <a href="/frontend/login.php"><button class="button" id="form-open">Student Login</button></a>
+            <a href="/admin/adminlogin.php"><button class="button" id="form-open">Teacher Login</button></a>
+            <a href="/frontend/login.php"><button class="button1" id="form-open">Student Login</button></a>
         </nav>
     </header>
+    <img id="bg" src="\images\background.jpg"> 
     <div id="main">
         <div id="m">
             <div class="main-container">
@@ -65,17 +91,17 @@
                     <p>
                         Start your learning journey today and experience a studdy buddy like never before!
                     </p>
-                    <form>
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                         <div class="input-div one">
                             <div><br><br><br>
                                 <h5>Any Query? contact Us!</h5>
-                                <input class="input" type="text">
+                                <input class="input" name="query" id='query' type="text">
                             </div>
                         </div>
                         <input type="button" class="btnn" value="Submit">
                     </form>
                 </div>
-                <div><img id="logo" src="\images\Blue_Simple_Modern_Graphic_Design_Studio_Logo-removebg-preview (1).png" alt="Logo"></div>
+                <div><img id="logo" src="\images\logo.png" alt="Logo"></div>
             </div>
         </div>
         <div class="sub-container" id="teacher">
@@ -95,7 +121,7 @@
             </div>
         </div>
 
-        <div class="sub-container1" id="studnet">
+        <div class="sub-container1" id="student">
             <div>
                 <h2>For Students</h2>
                 <p>By registering on our website, students unlock a wealth of benefits tailored for their academic
@@ -112,6 +138,7 @@
             </div>
         </div>
     </div>
+    <br><br>
 </body>
 <script src="script.js"></script>
 <script type="text/javascript" src="main.js"></script>

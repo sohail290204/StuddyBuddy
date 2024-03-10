@@ -59,8 +59,9 @@ if ($document) {
             <ul class="nav_items">
                 <li class="nav_item">
                     <a href="home.php" class="nav_link">Home</a>
-                    <a href="Schedule.php" class="nav_link">Your Schedule</a>
+                    <a href="chat.php" class="nav_link">Chat Room</a>
                     <a href="notes.php" class="nav_link">Notes</a>
+                    <a href="Schedule.php" class="nav_link">Your Schedule</a>
                     <!-- <a href="chat.php" class="nav_link">Chat Room</a> -->
                 </li>
             </ul>

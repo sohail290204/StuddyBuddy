@@ -26,14 +26,20 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 
     form {
         text-align: center;
-        max-width: 600px;
-        margin-left: 50px;
-        margin-top: 80px;
-        padding: 20px;
+        max-width:800px;
+        /* margin-left: 50px;
+        margin-top: 80px; */
+        border-radius: 25px;
+        position: relative;
+        left: 320px;
+        top:120px;color:#E67221;
+        padding-right: 180px;
+        padding-left: 180px;
+        padding-top: 30px; padding-bottom: 30px;
         background-color: transparent;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 1);
+        /* border-radius: 10px; */
+        
     }
 
     label {
@@ -47,9 +53,9 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     input {
         margin: 15px;
         font-weight: bold;
-        border: 2px solid #D09367;
+        border: 2px solid #E67221;
         border-radius: 20px;
-        font-size: 15px;
+        font-size: 25px;
         width: 80%;
         padding: 10px;
         text-align: center;
@@ -86,9 +92,9 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     }
 
     button:hover {
-        border: 3px solid #d29767;
+        border: 3px solid #E67221;
         width: 60%;
-        color: #d29767;
+        color: #ffffff;
     }
 
     #bg {

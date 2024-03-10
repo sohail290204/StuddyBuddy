@@ -5,35 +5,9 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     header('Location: firstpage.php');
 }
 
-?>
-<!-- <script>
-    var myVariable = sessionStorage.getItem('h');
-    // var myVariable = "Hello from JavaScript!";
-
-    $.ajax({
-        type: "POST",
-        url: "your_php_script.php",
-        data: {
-            jsVariable: myVariable
-        },
-        success: function(response) {
-            console.log(response); // Handle the response from the PHP script
-        }
-    });
-</script> -->
-
-<?php
-// // Your PHP code here (assuming it's in the same file)
-// if (isset($_POST['jsVariable'])) {
-//     $s = $_POST['jsVariable'];
-// //     // echo "Received value in PHP: " . $phpVariable;
-// // } else {
-// //     // echo "No value received from JavaScript.";
-// }
 
 
 
-session_start();
 $uname = $_SESSION['adminuname'];
 $name = $_SESSION['studentuname'];
 $msg = $_POST['text'];

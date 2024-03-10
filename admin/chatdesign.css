@@ -7,7 +7,7 @@
 
 #main {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.45);
+    /* background-color: rgba(0, 0, 0, 0.45); */
 }
 
 body {
@@ -15,6 +15,7 @@ body {
     height: 200px;
     margin: 0;
     padding: 1px;
+    background-color: rgb(148,64,239);
     font-family: Arial, sans-serif;
 }
 
@@ -92,7 +93,7 @@ h2 {
     text-align: center;
 }
 
-table {
+/* table {
     border-collapse: collapse;
     width: 80%;
     margin: 20px auto;
@@ -108,13 +109,12 @@ td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
-    /* Center the text in table cells */
 }
 
 th {
     background-color: transparent;
     background-color: rgba(0, 0, 0, 0.5);
-}
+} */
 
 .container {
     background-color: transparent;
@@ -124,7 +124,7 @@ th {
     color: #f1f1f1;
     border-radius: 5px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 .open {

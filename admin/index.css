@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: black;
-    height: 1000px;
+    background-color: rgb(5,60,88);
+    /* height: 1000px; */
 }
 
 a {
@@ -32,7 +32,7 @@ a {
 }
 
 .nav {
-    padding: 0 120px;
+    padding: 20px 150px;
     z-index: 999;
     width: 105%;
     background-color: black;
@@ -62,26 +62,30 @@ a {
 }
 
 .nav_link:hover {
-    color: #d9d9d9;
+    color: #cbcbcb;
 }
 
-.button {
-    padding: 6px 24px;
+#form-open {
+    /* margin: -100px; */
+    padding: 6px 15px;
     border: 2px solid #fff;
     background: transparent;
     border-radius: 6px;
     cursor: pointer;
 }
 
+/* 
 .button1 {
-    padding: 6px 24px;
+   padding: 6px 24px;
     margin-right: -300px;
     margin-left: 80px;
     border: 2px solid #fff;
     background: transparent;
     border-radius: 6px;
-    cursor: pointer;
-}
+    cursor: pointer; 
+    padding: 6px -24px;
+   
+}*/
 
 .button:active {
     transform: scale(0.98);
@@ -93,7 +97,7 @@ a {
 
 .main-container {
     position: relative;
-    top: 100px;
+    top: 130px;
     margin-left: 50px;
     margin-right: 50px;
     border-radius: 24px;
@@ -110,9 +114,13 @@ a {
 }
 
 .sub-container {
-    margin-top: 125px;
+    position: relative;
+    /* margin-top: 125px;
     margin-left: 50px;
-    margin-right: 50px;
+    margin-right: 50px; */
+    top: 220px;
+    /* margin-right: 25px; */
+    margin-left:4%;
     border-radius: 24px;
     width: 45%;
     box-sizing: border-box;
@@ -123,9 +131,13 @@ a {
 }
 
 .sub-container1 {
-    margin-top: -448px;
+    position: relative;
+    /* margin-top: -448px;
     margin-left: 750px;
-    margin-right: 50px;
+    margin-right: 50px; */
+    margin-left:2%;
+    /* margin-right: 10%; */
+    top: 220px;
     border-radius: 24px;
     width: 45%;
     box-sizing: border-box;
@@ -146,10 +158,10 @@ h2 {
 
 #logo {
     position: relative;
-    width: 450px;
-    height: 320px;
-    top: -320px;
-    right: -450px;
+    width: 480px;
+    height: 460px;
+    top: -450px;
+    right: -400px;
     display: block;
     margin: -50px auto -45px;
 }
@@ -157,12 +169,13 @@ h2 {
 .Welcome {
     width: 700px;
 }
-
+/* 
 #main {
     position: relative;
+    height: auto;
     background-color: rgba(0, 0, 0, 0.5);
 
-}
+} */
 
 /* input field css */
 
@@ -193,17 +206,26 @@ h2 {
     transition: .3s;
 }
 
+/* Example: Add focus styles */
+.button:focus,
+.button1:focus,
+.aa:focus,
+.btnn:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
 .input-div.focus>div>h5 {
     top: 0px;
     font-size: 15px;
 }
 
 .input-div:before {
-    right: 50%;
+    left: 45px;
 }
 
 .input-div:after {
-    left: 50%;
+    right: 50%;
 }
 
 .input-div.focus:before {
@@ -300,3 +322,50 @@ h2 {
     left: 135px;
     background-position: right;
 }
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .nav {
+        padding: 0 20px;
+    }
+
+    .button1 {
+        margin-right: 0;
+        margin-left: 20px;
+    }
+
+    .sub-container,
+    .sub-container1 {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    #logo {
+        width: 100%;
+        height: auto;
+        top: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .input-div>div {
+        width: 100%;
+    }
+
+    .btnn,
+    .aa {
+        width: 100%;
+    }
+}
+
+#bg {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+    filter: blur(3px);
+  }

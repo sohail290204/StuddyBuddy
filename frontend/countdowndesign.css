@@ -6,27 +6,45 @@
 .ex {
   width: 90%;
   max-width: 100%;
-  height: 600px;
-  padding: 50px;
+  height: 620px;
+  padding-left: 150px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   margin: 50px;
+  color: #ffffff;
   box-sizing: border-box;
   word-wrap: break-word;
   overflow: auto;
-  border: 2px solid #D47E37;
+  border-radius: 40px;
+  border: 2px solid #ffffff;
   text-align: center;
+
+}
+
+.con {
+  /* background-color: rgb(230,114,33); */
+  background: transparent;
+  margin: 60px;
+  border-radius: 40px;
 }
 
 .name {
-  font-size: 30px;
+  font-size: 40px;
+  color: #ffffff;
 }
 
 .ex::-webkit-scrollbar {
   width: 12px;
 }
 
+iframe {
+  border-radius: 50px;
+  border: 5px solid rgb(230, 114, 33);
+}
+
 .ex::-webkit-scrollbar-thumb {
   border-radius: 24px;
-  background-color: #a56e40;
+  background-color: transparent;
 }
 
 .ex::-webkit-scrollbar-track {
@@ -50,7 +68,7 @@ a {
   width: 100%;
   z-index: 100;
   padding: 0 20px;
-  margin: -7px -28px;
+  margin: -10px -28px;
   justify-content: flex-start;
 }
 
@@ -117,6 +135,7 @@ a {
   margin-bottom: 2px;
   font-size: 80px;
 }
+
 .welcome-t {
   /* text-align: center;
   position: relative;*/
@@ -129,7 +148,8 @@ a {
 #welcome-text1 {
   text-align: center;
   position: relative;
-  height: 30vh;margin-top: 25px;
+  height: 30vh;
+  margin-top: 25px;
   margin-bottom: 5px;
   font-size: 30px;
 }
@@ -152,7 +172,7 @@ hr {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 2px solid #f2f2f2;
+  border: 2px solid rgb(230, 114, 33)
 }
 
 /* 
@@ -237,7 +257,8 @@ th {
 #open:hover {
   display: inline-block;
   padding: 8px 28px;
-  margin: 5px; width: 65%;
+  margin: 5px;
+  width: 65%;
   border: 2px solid #030303;
   border-radius: 10px;
   background-color: #c07f41;
@@ -267,12 +288,14 @@ th {
   object-fit: cover;
   position: fixed;
   z-index: -1;
-  left: 0;
+  left: 0; 
   top: 00;
   filter: blur(3px);
 }
 
-#main1 {
+#main{
+  position: relative;
+  margin: -5px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -280,31 +303,28 @@ th {
   display: inline-block;
   padding: 8px 28px;
   color: #E6A568;
-  margin: 5px;
+  width: 150px;
+  margin: 25px;
   border: 2px solid #E6A568;
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
   text-decoration: none;
   font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease, width 0.3s ease;
 }
 
 .resource-button:hover {
-  display: inline-block;
-  padding: 8px 30px;
-  margin: 5px;
+  /* padding: 8px 30px; */
+  width: 160px;
   cursor: pointer;
-  box-shadow: #D47E37;
-  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.4);
-  text-decoration: none;
-  font-size: 16px;
 }
 
 #exbt {
   display: inline-block;
   font-size: 20px;
-  width: 80%;
+  width: 20%;
   color: #ffffff;
   padding: 10px;
   border-radius: 24px;
@@ -315,13 +335,13 @@ th {
   transition: background-color 0.3s ease, color 0.3s ease, width 0.3s ease;
   /* Added width transition */
   background-color: transparent;
-  border: 3px solid #A56E40;
+  border: 3px solid #E67221;
 }
 
 /* Hover Effect */
 #exbt:hover {
   border: 3px solid #d29767;
-  width: 85%;
+  width: 25%;
   color: #d29767;
 }
 

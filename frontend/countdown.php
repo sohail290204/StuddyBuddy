@@ -76,6 +76,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
         <a href="home.php" class="nav_link">Home</a>
         <a href="#video" class="nav_link">Video</a>
         <a href="#topic" class="nav_link">Todays Topic</a>
+        <a href="#exam" class="nav_link">Daily Exam</a>
         <a href="chat.php" class="nav_link">Chat Room</a>
         <a href="notes.php" class="nav_link">Notes</a>
         <a href="Schedule.php" class="nav_link">Your_Schedule</a>
@@ -85,7 +86,7 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     <a href="logout.php"> <button class="button" id="form-open">SignOut</button></a>
   </nav>
 </header>
-<img id="bg" src="\images\countdown1.png">
+<img id="bg" src="\images\countdown.png">
 
 <body>
   <div id="main">
@@ -111,8 +112,10 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
         $n = $document['Date'];
         $currentDate = new DateTime();
         $n = $currentDate->format('Y-m-d');
-        echo "<div id='welcome-text'><b> Welcome $uname,"; echo "<br>"; echo "<span class='welcome-t'> Today's date is: $n </b></span></div>";
-        echo "<div id='welcome-text1'> You started on  " . $document['Date'] . " </div>";
+        echo "<div id='welcome-text'><b> Welcome <span style='color:rgb(230,114,33)'>$uname </span>,</b>";
+        echo "<br>";
+        echo "<span class='welcome-t'> Today's date is: $n</div>";
+        echo "<div id='welcome-text1'> You started on  <span style='color:rgb(230,114,33)'>" . $document['Date'] . " </span></div>";
       } else {
         // $currentDate = new DateTime();
         // $c = $currentDate->format('Y-m-d');
@@ -157,8 +160,8 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
       }
 
 
-      // $sc = $daysRemaining;
-      $sc =50;
+      $sc = $daysRemaining;
+      // $sc =300;
 
       $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
       $database = $client->selectDatabase('Syllabus');
@@ -199,53 +202,53 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
             echo "<br><br><br><br><input type='button' id='b' value='Click here to give exam' onclick='redirectToExample()'> <br><br>  <br><br>  <hr><br><br>    ";
           } elseif ($scc >= 275 && $scc <= 290) {
             if ($scc >= 275 && $scc <= 280) {
-              echo  '<table><tr><td> JEE Main 2021 February 24 Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1ypV3rEnPYnXUF29nommhgKPORW2x-lij/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2021 February 24 Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1v8lgUChwNxlO5yPnLqWmd75yU8n2f7qf/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2021 February 25 Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1WwKlMRj4AoThD5i4o-Tw2w7gmJs3AeNz/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2021 February 25 Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1dEb01EYrPfOd4BLAtWCYXo6JrIuzUftI/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2021 February 26 Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/12a4rgUz2IlgSpLRmH4Nk0iOAwUAptB-k/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2021 February 26 Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1QJcWrfUw187uNxCmm8VsLTgw5iF9ylWy/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2021 March 16 Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1xC5qSzVTh5GY43vyTT84M-uibMXG6AeY/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2021 March 16 Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1ib5UuZrinMID-rqm1Sk9hIgCK6fbFOcG/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2021 March 17 Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1T43vI1UufKGkKWN0YeK9VjIZDIqPzkUV/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2021 March 17 Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1cw4TRnWhQfNnHSI3sr6573bM-HFnRk1w/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2021 March 18 Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1Nnnws9ePXHbZOvVTWywD8hHznPf0aOSh/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2021 March 18 Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1bbBDnyTbHPcgllk7X3Dh2DcWnwTXs5EO/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 February 24 </span> Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1ypV3rEnPYnXUF29nommhgKPORW2x-lij/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 February 24 </span> Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1v8lgUChwNxlO5yPnLqWmd75yU8n2f7qf/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 February 25 </span> Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1WwKlMRj4AoThD5i4o-Tw2w7gmJs3AeNz/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 February 25 </span> Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1dEb01EYrPfOd4BLAtWCYXo6JrIuzUftI/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 February 26 </span> Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/12a4rgUz2IlgSpLRmH4Nk0iOAwUAptB-k/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 February 26 </span> Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1QJcWrfUw187uNxCmm8VsLTgw5iF9ylWy/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 March 16 </span> Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1xC5qSzVTh5GY43vyTT84M-uibMXG6AeY/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 March 16 </span> Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1ib5UuZrinMID-rqm1Sk9hIgCK6fbFOcG/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 March 17 </span> Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1T43vI1UufKGkKWN0YeK9VjIZDIqPzkUV/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 March 17 </span> Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1cw4TRnWhQfNnHSI3sr6573bM-HFnRk1w/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 March 18 </span> Shift 1 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1Nnnws9ePXHbZOvVTWywD8hHznPf0aOSh/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2021 March 18 </span> Shift 2 Question Paper with Answer Key</td><td><a href="https://drive.google.com/file/d/1bbBDnyTbHPcgllk7X3Dh2DcWnwTXs5EO/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
             } elseif ($scc >= 281 && $scc <= 285) {
-              echo  '<table><tr><td> JEE Main 2022 June 24 Shift 1 Question Paper with Answer Key.pdf</td><td><a href="https://drive.google.com/file/d/1T2AGxAcveRpjqBFr1km8xziYJKPbTgDo/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2022 June 24 Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1vRaCdAka0Dqj7wA1bTSyD3h-5FnLIX4d/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2022 June 25 Shift 1 Question Paper with Answer Key Key </td><td><a href="https://drive.google.com/file/d/1zz63S8jUuvx-hOQCpziuFYdN5Hl4Znti/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2022 June 25 Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1b8Olbnm83sAb0lGFWxOwg3YhII_q3MN8/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2022 June 26 Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1E7zpZKv_VTKL97Np4wt30YFHH-Shd18Y/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2022 June 26 Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/16L1khhuUlYgUB5Ar9z4oXVADAImzA0fh/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2022 June 27 Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1PuVPQqMwDDNE7ICXKr1E5pAbC9OX83lJ/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2022 June 27 Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1K_AhfgB2pP-WFXq32u68wil98oE2i-oz/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2022 June 28 Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1eJg5CXPQj00ETIxCVuaOKcs-sxckYjV5/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2022 June 28 Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1vRYDtQJW-ORWbe0vHzKX23BlMTxbTa0k/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2022 June 29 Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1ZYu7b4YahFCcldhEPX79AlMZFPuf_hWC/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2022 June 29 Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1x_PoWgmgBsZN9G3Ta7Jhnon9Be3dL-rD/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main <span style="color:#E67221" > 2022 June 24 </span> Shift 1 Question Paper with Answer Key.pdf</td><td><a href="https://drive.google.com/file/d/1T2AGxAcveRpjqBFr1km8xziYJKPbTgDo/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2022 June 24</span> Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1vRaCdAka0Dqj7wA1bTSyD3h-5FnLIX4d/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2022 June 25</span> Shift 1 Question Paper with Answer Key Key </td><td><a href="https://drive.google.com/file/d/1zz63S8jUuvx-hOQCpziuFYdN5Hl4Znti/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2022 June 25</span> Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1b8Olbnm83sAb0lGFWxOwg3YhII_q3MN8/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2022 June 26</span> Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1E7zpZKv_VTKL97Np4wt30YFHH-Shd18Y/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2022 June 26</span> Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/16L1khhuUlYgUB5Ar9z4oXVADAImzA0fh/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2022 June 27</span> Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1PuVPQqMwDDNE7ICXKr1E5pAbC9OX83lJ/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2022 June 27</span> Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1K_AhfgB2pP-WFXq32u68wil98oE2i-oz/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2022 June 28</span> Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1eJg5CXPQj00ETIxCVuaOKcs-sxckYjV5/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2022 June 28</span> Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1vRYDtQJW-ORWbe0vHzKX23BlMTxbTa0k/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2022 June 29</span> Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1ZYu7b4YahFCcldhEPX79AlMZFPuf_hWC/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2022 June 29</span> Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1x_PoWgmgBsZN9G3Ta7Jhnon9Be3dL-rD/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
             } elseif ($scc >= 286 && $scc <= 290) {
-              echo  '<table><tr><td> JEE Main 2023 (April 6th Shift 1) Chemistry Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1PbmYu0AlJOMzWK2DyPDZ-5hdsmFwr0iU/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2023 (April 6th Shift 1) Maths Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1Zv_coJBpFXhdJQJPAarudecDtpAlnyez/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2023 (April 6th Shift 1) Physics Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/14yko3upRDhB-xF6ei9xGwn8AOlcXlr4e/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2023 (January 31 Evening Shift) Question Paper with Solutions </td><td><a href="https://drive.google.com/file/d/168bXsNSkK8f1O3ZAbGpp2amuCyocTmep/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2023 January 24 Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1SBmpHKGeRjq_BcoBJ8CU0B81_Prmk-Gc/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2023 January 24 Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1Grcc4ZKr8tasNKSWfrBnLlmxlp3zgO-Y/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2023 January 25 Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1l-Iggpn2aLrinQ1iSZRLGjjfhAP3lpb3/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2023 January 25 Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1QJI0DirG_wA93iw9i7j-gfMu3bloulTA/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2023 January 29 Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1xJ8ZPsd6nphxFvfIH5jD-fW8bjU-fFKw/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2023 January 30 Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1CPOZROpxl_EmCSr5AK0F9j_QsJzEMZDX/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
-              echo  '<table><tr><td> JEE Main 2023 January 30 Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1kvkxu6FpIY2o1yZywcT30w5sEMTbs_jB/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2023(April 6th Shift 1)</span> Chemistry Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1PbmYu0AlJOMzWK2DyPDZ-5hdsmFwr0iU/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2023 (April 6th Shift 1)</span> Maths Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1Zv_coJBpFXhdJQJPAarudecDtpAlnyez/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2023 (April 6th Shift 1)</span> Physics Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/14yko3upRDhB-xF6ei9xGwn8AOlcXlr4e/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2023 (January 31 Evening Shift)</span> Question Paper with Solutions </td><td><a href="https://drive.google.com/file/d/168bXsNSkK8f1O3ZAbGpp2amuCyocTmep/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2023 January 24</span> Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1SBmpHKGeRjq_BcoBJ8CU0B81_Prmk-Gc/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2023 January 24</span> Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1Grcc4ZKr8tasNKSWfrBnLlmxlp3zgO-Y/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2023 January 25</span> Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1l-Iggpn2aLrinQ1iSZRLGjjfhAP3lpb3/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2023 January 25</span> Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1QJI0DirG_wA93iw9i7j-gfMu3bloulTA/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2023 January 29</span> Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1xJ8ZPsd6nphxFvfIH5jD-fW8bjU-fFKw/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2023 January 30</span> Shift 1 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1CPOZROpxl_EmCSr5AK0F9j_QsJzEMZDX/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
+              echo  '<table><tr><td> JEE Main<span style="color:#E67221" > 2023 January 30</span> Shift 2 Question Paper with Answer Key </td><td><a href="https://drive.google.com/file/d/1kvkxu6FpIY2o1yZywcT30w5sEMTbs_jB/view?usp=sharing" target="_blank" Open><div id="open">Open</div></a></td></tr></table> ';
             }
           } elseif ($scc == 300) {
             echo " <pre ><br><div id='ex' > $Explaination\n</div> <br> </pre> ";
-          }elseif($scc > 300){
+          } elseif ($scc > 300) {
             echo " <pre ><br><div id='ex' > Congratulations to all the dedicated students who have successfully completed our JEE Mains course! Your hard work and commitment are truly commendable. As you embark on the exam, we extend our heartfelt best wishes for your success. May you excel in the upcoming JEE Mains with flying colors!</div> <br> </pre> ";
           } else {
-            echo "<pre><br><div class='name'><b> $Subject </b></div><div class='ex'>$Explaination\n</div><br><br></pre>";
+            echo "<div class='con'><br><pre><br><div class='name'><b> $Subject </b></div><div class='ex'>$Explaination\n</div><br><br></pre></div>";
 
             echo "<hr style='background-color: white; margin: 20px 0;'>";
-            echo "<pre><div id='video'> <h4 id='watch' > Watch Videos for better understanding</h4> <iframe height='650px'width='70%' src='$Link' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe> </div> </pre>";
+            echo "<pre><div id='video'> <h4 id='watch' > Watch Videos for better understanding</h4> <iframe height='550px'width='70%' src='$Link' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe> </div> </pre>";
           }
         }
       }
@@ -324,12 +327,13 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
                 echo "";
               } else {
                 // Subject does not exist for the given day, display resources
-                echo "<hr style='background-color: white; margin: 20px 0;'>";
+                echo "<hr>";
                 echo "<br>";
-                echo "<div id='resource-button'><pre><a href='$Link1'><button class='resource-button'>Resource 1</button></a></pre></div> <br>";
-                echo "<div id='resource-button'><pre><a href='$Link2'><button class='resource-button'>Resource 2</button></a></pre></div> <br>";
-                echo "<div id='resource-button'><pre><a href='$Link3' ><button class='resource-button'>Resource 3</button></a></pre></div> <br>";
-                echo "<hr style='background-color: white; margin: 20px 0;'>";
+                echo " <h4 id='video' >Some Extra resources for your better understanding</h4>";
+                echo "<a href='$Link1'><button class='resource-button'>Resource 1</button></a>";
+                echo "<a href='$Link2'><button class='resource-button'>Resource 2</button></a>";
+                echo "<a href='$Link3' ><button class='resource-button'>Resource 3</button></a>";
+                echo "<br><br><hr>";
               }
             } else {
               echo "Some thing wnet wrong";
@@ -368,14 +372,16 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
         }
         echo "<br><hr>";
       } else {
+        echo "<div id='exam'>";
         $_SESSION['submit'] = "done";
         echo "<br>";
         echo "<br><label>Ready for your daily Exam??</label>";
         echo "<br>";
 
         echo "<br><form action='exam.php' method='post'><button id='exbt' type='submit'>Go for it!</button> </form>";
+        echo "</div>";
       } ?>
-    </div>
+    </div><br><br><br>
   </div>
 </body>
 <!-- <script>
@@ -396,6 +402,6 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
     window.location.href = "dailyexam.php";
   }
 </script>
-<br><br><br>
+
 
 </html>

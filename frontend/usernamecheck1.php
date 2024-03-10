@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["username"])) {
     $f = $_SESSION['f'];
     if ($f == 'hello') {
         if ($usernameExists) {
-            echo "<span style='color: green;'>Teacher available with this username</span>";
+            echo "<span style='color: rgb(46,197,0);'><b>Teacher available with this username</b></span>";
         } else {
             echo "<span style='color: red;'>NO teacher exists with this username</span>";
         }

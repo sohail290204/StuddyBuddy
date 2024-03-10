@@ -69,13 +69,13 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
                     <!-- <a href="Schedule.php" class="nav_link">Your_Schedule</a> -->
                     <a href="#updates" class="nav_link">JEE Updates</a>
                     <a href="#jee" class="nav_link">What is JEE Mains</a>
-                    <a href="profile.php" class="nav_link">Profile</a>
+                    <!-- <a href="profile.php" class="nav_link">Profile</a> -->
                 </li>
             </ul>
 
             <a href="logout.php"> <button class="button" id="form-open">SignOut</button></a>
         </nav>
-    </header>
+    </header><img id="bg" src="\images\indianboywithlaptop.png">
     <div id="main">
 
         <div id="main-container" class="main-container">
@@ -145,72 +145,73 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
                 </div>
             </div>
         </div>
-            <br><br><br><br><br><br><br>
-            <div class="container">
-                <div class="slideshow-container">
+        <br><br><br><br><br><br><br>
+        <div class="container">
+            <div class="slideshow-container">
 
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="/images/1.png" style="width:100%">
-                        <div class="text">Caption Text</div>
-                    </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="/images/1.png" style="width:100%">
+                    <div class="text">Caption Text</div>
+                </div>
 
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="/images/2.png" style="width:100%">
-                        <div class="text">Caption Two</div>
-                    </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="/images/2.png" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
 
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="/images/3.png" style="width:100%">
-                        <div class="text">Caption Three</div>
-                    </div>
-                    <!-- <div class="mySlides fade">
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="/images/3.png" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+                <!-- <div class="mySlides fade">
                     <div class="numbertext">4 / 3</div>
                     <img src="/images/4.png" style="width:100%">
                     <div class="text">Caption Three</div>
                 </div> -->
 
-                </div>
-                <div style="text-align:center">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
+            </div>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
         </div>
+        <br>
 
-        <script>
-            let slideIndex = 0;
-            showSlides();
-
-            function showSlides() {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {
-                    slideIndex = 1
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-                setTimeout(showSlides, 2000); // Change image every 2 seconds
-            }
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js" integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js" integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="script.js"></script>
-        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-        <script src="https://mediafiles.botpress.cloud/38628bbc-dceb-422d-8790-bab1ef048274/webchat/config.js" defer>
-        </script>
-
+    </div>
 </body>
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js" integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js" integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="script.js"></script>
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/38628bbc-dceb-422d-8790-bab1ef048274/webchat/config.js" defer>
+</script>
+
 
 </html>
