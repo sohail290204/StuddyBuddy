@@ -76,7 +76,8 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
 
             <a href="logout.php"> <button class="button" id="form-open">SignOut</button></a>
         </nav>
-    </header><img id="bg" src="\images\indianboywithlaptop.png">
+    </header>
+    <img id="bg" src="\images\indianboywithlaptop.png">
     <div id="main">
 
         <div id="main-container" class="main-container">

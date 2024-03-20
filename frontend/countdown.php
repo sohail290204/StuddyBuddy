@@ -160,8 +160,8 @@ if (!isset($_SESSION['login']) || ($_SESSION['login'] !== true)) {
       }
 
 
-      // $sc = $daysRemaining;
-      $sc =300;
+      $sc = $daysRemaining;
+      // $sc =24;
 
       $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
       $database = $client->selectDatabase('Syllabus');

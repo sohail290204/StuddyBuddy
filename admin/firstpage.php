@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Anta&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Madimi+One&display=swap" rel="stylesheet">
-    <style>
+    <!-- <style>
         body {
             font-family: "Kanit", sans-serif;
         }
-    </style>
+    </style> -->
     <script>
         // Smooth scroll animation using GSAP
         document.addEventListener("DOMContentLoaded", function() {
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-    <header class="header mainMenu">
+    <header class="header" class="mainMenu">
         <nav class="nav">
             <a href="" class="nav_logo">Studdy Buddy</a>
             <ul class="nav_items">
@@ -81,19 +81,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a href="/frontend/login.php"><button class="button1" id="form-open">Student Login</button></a>
         </nav>
     </header>
-    <img id="bg" src="\images\background.jpg"> 
+    <img id="bg" src="\images\first1.jpg">
     <div id="main">
         <div id="m">
             <div class="main-container">
-                <div class="Welcome" id="Welcome">
-                    <h1>Studdy Buddy</h1><br>
-                    <h2>Welcome to the most advance Exam Preparation System </h2>
+                <div class="Welcome" id="Welcome"><br>
+                    <h1><span class='kk' style=' color:rgb(255, 92, 0)'><b>Studdy Buddy</b></span></h1><br>
+                    <h2>Welcome to the most advance Exam Preparation System </h2><br>
                     <p>
                         Start your learning journey today and experience a studdy buddy like never before!
-                    </p>
+                    </p><br><br>
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                         <div class="input-div one">
-                            <div><br><br><br>
+                            <div><br><br>
                                 <h5>Any Query? contact Us!</h5>
                                 <input class="input" name="query" id='query' type="text">
                             </div>
@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="button" class="btnn" value="Submit">
                     </form>
                 </div>
-                <div><img id="logo" src="\images\logo.png" alt="Logo"></div>
+                <div><img id="logo" src="\images\logo.svg" alt="Logo"></div>
             </div>
         </div>
         <div class="sub-container" id="teacher">
@@ -136,9 +136,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     knowledge exchange. </p>
                 <br> <button class="aa"><a class="a" href="/frontend/register.php">Student Registration</a></button>
             </div>
-        </div>
+        </div>    <br><br>
     </div>
-    <br><br>
+
 </body>
 <script src="script.js"></script>
 <script type="text/javascript" src="main.js"></script>

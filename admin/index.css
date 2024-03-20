@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: "montserrat"; */
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -35,7 +35,7 @@ a {
     padding: 20px 150px;
     z-index: 999;
     width: 105%;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .nav,
@@ -102,12 +102,12 @@ a {
     margin-right: 50px;
     border-radius: 24px;
     height: 500px;
-    background-color: #92D4E0;
+    background-color: #FFF1E6;
     color: black;
     text-align: center;
     padding: 30px;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 50px;
+    padding-left: 50px;
     box-sizing: border-box;
     text-align: left;
     font-size: 25px;
@@ -169,19 +169,19 @@ h2 {
 .Welcome {
     width: 700px;
 }
-/* 
+
 #main {
-    position: relative;
-    height: auto;
+    /* position: relative; */
+    height: 1300px;
     background-color: rgba(0, 0, 0, 0.5);
 
-} */
+}
 
 /* input field css */
 
 .input-div>div {
     position: relative;
-    height: -45px;
+    height: -10px;
     width: 220px;
 }
 
@@ -199,11 +199,11 @@ h2 {
 .input-div>div>h5 {
     position: absolute;
     left: 10px;
-    top: 40%;
+    top: 10%;
     transform: translateY(-50%);
     color: #000000;
     font-size: 15px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 /* Example: Add focus styles */
@@ -216,7 +216,7 @@ h2 {
 }
 
 .input-div.focus>div>h5 {
-    top: 0px;
+    top: -20px;
     font-size: 15px;
 }
 
@@ -235,7 +235,7 @@ h2 {
 .input-div>div>input {
     position: absolute;
     left: 0;
-    top: 0;
+    top: -10px;
     width: 100%;
     height: 100%;
     border: none;
@@ -346,7 +346,7 @@ h2 {
     #logo {
         width: 100%;
         height: auto;
-        top: 0;
+        top: 10px;
         right: 0;
         margin: 0 auto;
     }
@@ -367,5 +367,5 @@ h2 {
     object-fit: cover;
     position: fixed;
     z-index: -1;
-    filter: blur(3px);
+    /* filter: blur(3px); */
   }
