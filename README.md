@@ -1,3 +1,15 @@
+Studdy Buddy is a online preparation website for students who are preparing for JEE mains.
+Introducing our Study Buddy, a revolutionary platform designed to enhance your studying experience. This intelligent system combines experience with learning techniques to help you achieve academic success.
+To get started, simply complete the registration process. Select your specific course, whether it's for your board exams or entrance tests. Once registered, you can conveniently log in using your chosen username and password.
+The timetable allocates specific time slots for each topic you need to cover while ensuring one day for revision, rest, and other activities. Regular monthly tests are conducted to evaluate your understanding of the topics studied throughout the week.
+You can actively identify your weak areas based on your test performance. Additional study material to focus on during your off days. You will have access to recommended books and online courses, some of which are free YouTube video links.
+Collaboration is encouraged through a virtual classroom where students can study together. If you encounter doubts, there is a chatbot available to provide solutions. Moreover, you can connect with teachers for real-time doubt-solving when they are available.
+It offers the convenience of translating study notes into your local language using Google Translate features.
+The Study Buddy provides access to previous year's question papers with solutions, aiding in comprehensive exam preparation. 
+Your scores and points are maintained on the platform, reflecting your progress and dedication. Students who fail to complete tasks on time may have points deducted. This feature encourages timely completion of assignments and promotes a sense of accountability.
+With our Studdy Buddy, you'll experience a transformative learning journey, personalized to your needs. Unlock your true potential and conquer academic challenges with confidence and ease.
+
+
 The output of my project
 
 First Page
