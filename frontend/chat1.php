@@ -20,6 +20,7 @@ require 'vendor/autoload.php';
 // Create a MongoDB client
 $client = new MongoDB\Client("mongodb+srv://Sohail2902:Soh%40il290204@studdy-buddy.ctaliif.mongodb.net/");
 
+$name = [0,1,2];
 
 
 if ($msg == "") {
